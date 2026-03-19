@@ -1,15 +1,8 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import writeAPrd from "@/content/challenges/write-a-prd.json";
-import prioritizeBacklog from "@/content/challenges/prioritize-backlog.json";
-import defineMetrics from "@/content/challenges/define-metrics.json";
+import fs from "fs";
+import path from "path";
 import type { ChallengeConfig } from "@/types/challenge";
-
-const challenges: ChallengeConfig[] = [
-    writeAPrd as ChallengeConfig,
-    prioritizeBacklog as ChallengeConfig,
-    defineMetrics as ChallengeConfig,
-];
 
 function toDbRow(config: ChallengeConfig) {
     return {
@@ -29,6 +22,15 @@ function toDbRow(config: ChallengeConfig) {
     };
 }
 
+function loadChallenges(): ChallengeConfig[] {
+    const dir = path.join(process.cwd(), "src/content/challenges");
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+    return files.map((file) => {
+        const raw = fs.readFileSync(path.join(dir, file), "utf-8");
+        return JSON.parse(raw) as ChallengeConfig;
+    });
+}
+
 export async function POST() {
     if (process.env.NODE_ENV === "production") {
         return NextResponse.json(
@@ -37,22 +39,35 @@ export async function POST() {
         );
     }
 
+    const challenges = loadChallenges();
     const supabase = createAdminClient();
     const rows = challenges.map(toDbRow);
 
-    const { error } = await supabase
-        .from("challenges")
-        .upsert(rows, { onConflict: "slug" });
+    const batchSize = 10;
+    let seeded = 0;
 
-    if (error) {
-        return NextResponse.json(
-            { success: false, error: error.message, code: "SEED_FAILED" },
-            { status: 500 }
-        );
+    for (let i = 0; i < rows.length; i += batchSize) {
+        const batch = rows.slice(i, i + batchSize);
+        const { error } = await supabase
+            .from("challenges")
+            .upsert(batch, { onConflict: "slug" });
+
+        if (error) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: `Batch ${Math.floor(i / batchSize) + 1} failed: ${error.message}`,
+                    code: "SEED_FAILED",
+                    data: { seededSoFar: seeded },
+                },
+                { status: 500 }
+            );
+        }
+        seeded += batch.length;
     }
 
     return NextResponse.json({
         success: true,
-        data: { message: `Seeded ${rows.length} challenges` },
+        data: { message: `Seeded ${seeded} challenges` },
     });
 }

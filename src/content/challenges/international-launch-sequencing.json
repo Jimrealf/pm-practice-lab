@@ -1,0 +1,167 @@
+{
+    "slug": "international-launch-sequencing",
+    "title": "International launch sequencing",
+    "description": "Real-world PM scenario on international launch sequencing with conflicting stakeholder incentives and incomplete data.",
+    "difficulty": "intermediate",
+    "category": "strategy",
+    "version": 1,
+    "timeEstimateMinutes": 45,
+    "scenarioBrief": "You are a PM at LearnTrack, a Series B edtech company (175 employees, $16.4M ARR). Your immediate assignment is international launch sequencing. The executive team expects a recommendation before Friday's review. You have four context sources: a KPI snapshot, stakeholder notes, customer voice, and execution risk data. Each source is useful but incomplete, and at least one source is biased or contradictory. Choose the smallest plan that can prove value without increasing operational risk.",
+    "contextMaterials": [
+        {
+            "id": "kpi-snapshot",
+            "type": "data",
+            "title": "KPI Snapshot (Last 90 Days)",
+            "content": "Monthly active accounts: 69351\nNew logo adds: 2164\nActivation rate: 54%\n30-day retention: 33%\nNPS: 22 (n=201)\nExpansion rate in top cohort: 11%\nQuarter-over-quarter activation delta: 3 points\nQuarter-over-quarter retention delta: 1 points\nCaveat: NPS sample over-indexes power users and excludes the most recent downgraded accounts."
+        },
+        {
+            "id": "stakeholder-notes",
+            "type": "text",
+            "title": "Stakeholder Notes",
+            "content": "CRO (Alina Klein): \"I need a plan sales can explain in live calls next week, not a roadmap promise.\"\nVP Engineering (Leo Brooks): \"Scope drift, not coding speed, is the main reason timelines slip. Lock boundaries now.\"\nHead of Customer Success (Asha Foster): \"Trust loss shows up before churn in expansion conversations.\"\nCommercial note: 4 late-stage deals cite this area as a decision factor.\nSupport note: 42 escalations in the last month mention related pain points.\nBias warning: projected revenue impact is directional and not contract-backed."
+        },
+        {
+            "id": "customer-voice",
+            "type": "text",
+            "title": "Customer Voice (Interview Snippets)",
+            "content": "Maple Home Goods (Operations Lead): \"We see value quickly once configured, but the first session still feels too heavy.\"\nKeystone Legal (IT Manager): \"A few avoidable errors in onboarding made the team question readiness.\"\nMariner Foods (Director of Product): \"I would expand if reporting and error states were easier for non-technical users.\"\nData gap: no structured interviews from churned accounts in the last 30 days."
+        },
+        {
+            "id": "delivery-risk",
+            "type": "data",
+            "title": "Delivery and Risk Snapshot",
+            "content": "Open P1/P2 issues: 39\nMedian cycle time: 22 days\nOn-time delivery last quarter: 83%\nShared platform dependencies unresolved: 1\nRelease rollback events last quarter: 3\nAverage time to resolve escalations: 18 hours\nContradiction: roadmap shows full utilization, but squads report 10-20% interrupt-driven bandwidth."
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "decision",
+            "hint": "State your decision in one sentence, then justify it with evidence and constraints.",
+            "type": "textarea",
+            "label": "Decision and Recommendation",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "options",
+            "hint": "Compare at least two viable alternatives and what each sacrifices.",
+            "type": "textarea",
+            "label": "Alternatives and Trade-offs",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "scope",
+            "hint": "Define the primary segment and who is explicitly deprioritized.",
+            "type": "textarea",
+            "label": "Who This Optimizes For",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "risks",
+            "hint": "List top risks and concrete guardrails to limit downside.",
+            "type": "textarea",
+            "label": "Key Risks and Guardrails",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "plan",
+            "hint": "Break down phases, owners, and stop/go checkpoints.",
+            "type": "textarea",
+            "label": "90-Day Execution Plan",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "decision-quality",
+            "name": "Decision Quality",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Is the recommendation specific, evidence-based, and timely?"
+        },
+        {
+            "id": "tradeoff-rigor",
+            "name": "Trade-off Rigor",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are trade-offs explicit, quantified where possible, and defensible?"
+        },
+        {
+            "id": "stakeholder-awareness",
+            "name": "Stakeholder Awareness",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Does the proposal handle competing incentives credibly?"
+        },
+        {
+            "id": "intellectual-honesty",
+            "name": "Intellectual Honesty",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are uncertainty and assumptions clearly acknowledged?"
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "decision",
+            "content": "Recommendation: run a bounded pilot with reliability guardrails. Baseline today is activation 54% and 30-day retention 33% across 69351 active accounts. Scale only if activation improves by at least 4 points without retention regression."
+        },
+        {
+            "fieldId": "options",
+            "content": "Option A is broad rollout now to support near-term sales urgency tied to 4 late-stage deals. Option B is reliability-only focus with deferred expansion. Option C combines targeted rollout with dependency reduction from 1 unresolved items. Option C is the best risk-adjusted path."
+        },
+        {
+            "fieldId": "scope",
+            "content": "Optimize for repeat-use mid-market teams where onboarding friction is most visible in recent escalations (42). Deprioritize bespoke edge cases this cycle because cycle time is 22 days and on-time delivery is 83%."
+        },
+        {
+            "fieldId": "risks",
+            "content": "Key risks are dependency slippage, overreliance on projected revenue, and trust erosion from reliability events. Guardrails: weekly dependency review with Leo Brooks, explicit non-goals, and rollback if escalation volume increases more than 15% week-over-week."
+        },
+        {
+            "fieldId": "plan",
+            "content": "Weeks 1-2 lock scope and instrumentation. Weeks 3-6 run pilot and reliability fixes. Weeks 7-10 evaluate cohort movement against activation/retention deltas and NPS confidence limits (n=201). Weeks 11-12 decide scale, pivot, or stop with documented trade-offs."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Decision",
+            "fieldIds": [
+                "decision"
+            ]
+        },
+        {
+            "id": "step-2",
+            "title": "Alternatives",
+            "fieldIds": [
+                "options"
+            ]
+        },
+        {
+            "id": "step-3",
+            "title": "Who",
+            "fieldIds": [
+                "scope"
+            ]
+        },
+        {
+            "id": "step-4",
+            "title": "Key",
+            "fieldIds": [
+                "risks"
+            ]
+        },
+        {
+            "id": "step-5",
+            "title": "90-Day",
+            "fieldIds": [
+                "plan"
+            ]
+        }
+    ]
+}

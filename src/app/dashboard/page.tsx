@@ -139,7 +139,7 @@ export default async function DashboardPage() {
                     <h2 className="font-display font-bold text-[20px] text-text-primary">
                         No submissions yet
                     </h2>
-                    <p className="mt-2 text-[14px] text-text-secondary max-w-md mx-auto">
+                    <p className="mt-2 text-[14px] text-text-secondary max-w-[448px] mx-auto">
                         Pick a challenge, do the work, and get AI-powered feedback
                         from a senior PM perspective.
                     </p>
@@ -218,11 +218,21 @@ export default async function DashboardPage() {
 
                     {notStarted.length > 0 && (
                         <>
-                            <h2 className="font-display font-bold text-[20px] text-text-primary pt-4">
-                                Not started
-                            </h2>
+                            <div className="flex items-center justify-between pt-4">
+                                <h2 className="font-display font-bold text-[20px] text-text-primary">
+                                    Not started
+                                </h2>
+                                {notStarted.length > 3 && (
+                                    <Link
+                                        href="/challenges"
+                                        className="text-[13px] font-medium text-accent hover:text-accent-dark transition-colors"
+                                    >
+                                        View all challenges ({notStarted.length})
+                                    </Link>
+                                )}
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {notStarted.map(({ challenge }) => (
+                                {notStarted.slice(0, 3).map(({ challenge }) => (
                                     <Link key={challenge.id} href={`/challenges/${challenge.slug}`}>
                                         <Card hoverable className="p-5">
                                             <div className="flex items-center gap-2 mb-2">

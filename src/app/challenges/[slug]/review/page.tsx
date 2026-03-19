@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { useParams, useSearchParams } from "next/navigation";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -29,7 +30,36 @@ function feedbackLabel(type: DimensionScore["feedbackType"]): string {
     return "Growth area";
 }
 
+function NavLinks({ slug }: { slug: string }) {
+    return (
+        <div className="flex items-center gap-4 mb-8">
+            <Link
+                href={`/challenges/${slug}`}
+                className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+            >
+                Back to challenge
+            </Link>
+            <span className="text-text-tertiary">|</span>
+            <Link
+                href="/challenges"
+                className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+            >
+                All challenges
+            </Link>
+            <span className="text-text-tertiary">|</span>
+            <Link
+                href="/dashboard"
+                className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+            >
+                Dashboard
+            </Link>
+        </div>
+    );
+}
+
 export default function ReviewPage() {
+    const params = useParams();
+    const slug = params.slug as string;
     const searchParams = useSearchParams();
     const submissionId = searchParams.get("submission");
     const [state, setState] = useState<ReviewState>({ status: "loading" });
@@ -115,7 +145,7 @@ export default function ReviewPage() {
 
     if (state.status === "loading") {
         return (
-            <div className="max-w-3xl mx-auto px-6 py-12">
+            <div className="max-w-[768px] mx-auto px-6 py-12">
                 <Skeleton className="h-8 w-64 mb-4" />
                 <Skeleton className="h-4 w-96 mb-8" />
                 <Skeleton className="h-48 w-full mb-4" />
@@ -126,20 +156,25 @@ export default function ReviewPage() {
 
     if (state.status === "error") {
         return (
-            <div className="max-w-3xl mx-auto px-6 py-12 text-center">
+            <div className="max-w-[768px] mx-auto px-6 py-12">
+                <NavLinks slug={slug} />
+                <div className="text-center">
                 <h1 className="font-display font-bold text-[24px] text-text-primary">
                     Something went wrong
                 </h1>
                 <p className="mt-2 text-[14px] text-text-secondary">
                     {state.message}
                 </p>
+                </div>
             </div>
         );
     }
 
     if (state.status === "pending" || state.status === "reviewing") {
         return (
-            <div className="max-w-3xl mx-auto px-6 py-12 text-center">
+            <div className="max-w-[768px] mx-auto px-6 py-12">
+                <NavLinks slug={slug} />
+                <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-light mb-6">
                     <svg
                         width="28"
@@ -159,7 +194,7 @@ export default function ReviewPage() {
                 <h1 className="font-display font-bold text-[24px] text-text-primary">
                     A senior PM is reviewing your work...
                 </h1>
-                <p className="mt-2 text-[14px] text-text-secondary max-w-md mx-auto">
+                <p className="mt-2 text-[14px] text-text-secondary max-w-[448px] mx-auto">
                     Your submission is being analyzed. This usually takes 10-30 seconds.
                     This page will update automatically.
                 </p>
@@ -170,13 +205,16 @@ export default function ReviewPage() {
                         <span className="w-2 h-2 rounded-full bg-accent animate-bounce [animation-delay:300ms]" />
                     </div>
                 </div>
+                </div>
             </div>
         );
     }
 
     if (state.status === "failed") {
         return (
-            <div className="max-w-3xl mx-auto px-6 py-12 text-center">
+            <div className="max-w-[768px] mx-auto px-6 py-12">
+                <NavLinks slug={slug} />
+                <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-feedback-growth/10 mb-6">
                     <svg
                         width="28"
@@ -197,13 +235,14 @@ export default function ReviewPage() {
                 <h1 className="font-display font-bold text-[24px] text-text-primary">
                     Review failed
                 </h1>
-                <p className="mt-2 text-[14px] text-text-secondary max-w-md mx-auto">
+                <p className="mt-2 text-[14px] text-text-secondary max-w-[448px] mx-auto">
                     Something went wrong while generating your review. You can try again.
                 </p>
                 <div className="mt-6">
                     <Button onClick={handleRetry} disabled={retrying}>
                         {retrying ? "Retrying..." : "Retry review"}
                     </Button>
+                </div>
                 </div>
             </div>
         );
@@ -213,7 +252,8 @@ export default function ReviewPage() {
     const { review } = state;
 
     return (
-        <div className="max-w-3xl mx-auto px-6 py-12">
+        <div className="max-w-[768px] mx-auto px-6 py-12">
+            <NavLinks slug={slug} />
             <div className="text-center mb-10">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent-light mb-4">
                     <span className="font-display font-bold text-[32px] text-accent">
@@ -223,7 +263,7 @@ export default function ReviewPage() {
                 <h1 className="font-display font-bold text-[24px] text-text-primary">
                     Your Review
                 </h1>
-                <p className="mt-2 text-[14px] text-text-secondary max-w-lg mx-auto">
+                <p className="mt-2 text-[14px] text-text-secondary max-w-[512px] mx-auto">
                     {review.summary}
                 </p>
             </div>

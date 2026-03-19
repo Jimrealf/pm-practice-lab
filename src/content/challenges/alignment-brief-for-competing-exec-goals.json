@@ -1,0 +1,167 @@
+{
+    "slug": "alignment-brief-for-competing-exec-goals",
+    "title": "Alignment brief for competing exec goals",
+    "description": "Real-world PM scenario on alignment brief for competing exec goals with conflicting stakeholder incentives and incomplete data.",
+    "difficulty": "beginner",
+    "category": "communication",
+    "version": 1,
+    "timeEstimateMinutes": 40,
+    "scenarioBrief": "You are a PM at CostBeacon, a Series B finops company (176 employees, $16.1M ARR). Your immediate assignment is alignment brief for competing exec goals. The executive team expects a recommendation before Friday's review. You have four context sources: a KPI snapshot, stakeholder notes, customer voice, and execution risk data. Each source is useful but incomplete, and at least one source is biased or contradictory. Optimize for repeatable outcomes over one-off wins that do not scale.",
+    "contextMaterials": [
+        {
+            "id": "kpi-snapshot",
+            "type": "data",
+            "title": "KPI Snapshot (Last 90 Days)",
+            "content": "Monthly active accounts: 23863\nNew logo adds: 2892\nActivation rate: 24%\n30-day retention: 44%\nNPS: 7 (n=61)\nExpansion rate in top cohort: 7%\nQuarter-over-quarter activation delta: -6 points\nQuarter-over-quarter retention delta: -5 points\nCaveat: NPS sample over-indexes power users and excludes the most recent downgraded accounts."
+        },
+        {
+            "id": "stakeholder-notes",
+            "type": "text",
+            "title": "Stakeholder Notes",
+            "content": "CRO (Samir Carter): \"I need a plan sales can explain in live calls next week, not a roadmap promise.\"\nVP Engineering (Riya Gupta): \"Scope drift, not coding speed, is the main reason timelines slip. Lock boundaries now.\"\nHead of Customer Success (Riya Bennett): \"Trust loss shows up before churn in expansion conversations.\"\nCommercial note: 2 late-stage deals cite this area as a decision factor.\nSupport note: 33 escalations in the last month mention related pain points.\nBias warning: projected revenue impact is directional and not contract-backed."
+        },
+        {
+            "id": "customer-voice",
+            "type": "text",
+            "title": "Customer Voice (Interview Snippets)",
+            "content": "Pinecrest Retail (Operations Lead): \"We see value quickly once configured, but the first session still feels too heavy.\"\nKeystone Legal (IT Manager): \"We needed clearer ownership between implementation and support during rollout.\"\nHarbor Wholesale (Director of Product): \"I would expand if reporting and error states were easier for non-technical users.\"\nData gap: no structured interviews from churned accounts in the last 30 days."
+        },
+        {
+            "id": "delivery-risk",
+            "type": "data",
+            "title": "Delivery and Risk Snapshot",
+            "content": "Open P1/P2 issues: 32\nMedian cycle time: 23 days\nOn-time delivery last quarter: 76%\nShared platform dependencies unresolved: 6\nRelease rollback events last quarter: 1\nAverage time to resolve escalations: 26 hours\nContradiction: roadmap shows full utilization, but squads report 10-20% interrupt-driven bandwidth."
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "audiences",
+            "hint": "Map each audience to the message they need and why.",
+            "type": "textarea",
+            "label": "Audience and Intent",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "narrative",
+            "hint": "Write the core narrative that aligns stakeholders on action.",
+            "type": "textarea",
+            "label": "Core Narrative",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "pushback",
+            "hint": "Predict objections from key stakeholders and how you will respond.",
+            "type": "textarea",
+            "label": "Expected Pushback",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "draft",
+            "hint": "Draft the memo or all-hands update you would send.",
+            "type": "textarea",
+            "label": "Message Draft",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "follow-up",
+            "hint": "Explain how you will collect feedback and close open issues.",
+            "type": "textarea",
+            "label": "Follow-up and Feedback Loop",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "audience-fit",
+            "name": "Audience Fit",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Is messaging adapted to the needs and incentives of each audience?"
+        },
+        {
+            "id": "clarity",
+            "name": "Clarity and Concision",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Is communication clear, direct, and decision-oriented?"
+        },
+        {
+            "id": "conflict-navigation",
+            "name": "Conflict Navigation",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Does it handle disagreement constructively and concretely?"
+        },
+        {
+            "id": "credibility",
+            "name": "Credibility",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are claims grounded in evidence with transparent caveats?"
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "audiences",
+            "content": "Executives need decision logic and downside exposure, delivery teams need concrete scope and ownership, and customer-facing teams need timing and expectation framing. Tailor message depth by audience without changing the core narrative."
+        },
+        {
+            "fieldId": "narrative",
+            "content": "Recommendation: align on a staged plan because the data is mixed, not broken. Activation is 24% and retention is 44%, while NPS (7, n=61) and 33 escalations indicate trust risk if execution quality slips."
+        },
+        {
+            "fieldId": "pushback",
+            "content": "Expect commercial pressure from Samir Carter around the 2 deal pipeline, technical caution from Riya Gupta on dependency risk (6 unresolved), and customer-impact pressure from Riya Bennett due to escalation volume. Address each with explicit thresholds and review dates."
+        },
+        {
+            "fieldId": "draft",
+            "content": "Team, we are moving to a bounded plan that prioritizes reliability and measurable customer value. Baseline today is 23863 active accounts, activation 24%, retention 44%, and on-time delivery 76%. We will publish weekly progress and revisit scope at the midpoint checkpoint."
+        },
+        {
+            "fieldId": "follow-up",
+            "content": "Hold a structured Q&A within 24 hours, capture unresolved questions in a decision log, and assign owner plus due date for each item. Publish weekly updates that close the loop on objections raised by Sales, Engineering, and Customer Success."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Audience",
+            "fieldIds": [
+                "audiences"
+            ]
+        },
+        {
+            "id": "step-2",
+            "title": "Core",
+            "fieldIds": [
+                "narrative"
+            ]
+        },
+        {
+            "id": "step-3",
+            "title": "Expected",
+            "fieldIds": [
+                "pushback"
+            ]
+        },
+        {
+            "id": "step-4",
+            "title": "Message",
+            "fieldIds": [
+                "draft"
+            ]
+        },
+        {
+            "id": "step-5",
+            "title": "Follow-up",
+            "fieldIds": [
+                "follow-up"
+            ]
+        }
+    ]
+}

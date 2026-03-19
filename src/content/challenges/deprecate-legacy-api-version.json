@@ -1,0 +1,167 @@
+{
+    "slug": "deprecate-legacy-api-version",
+    "title": "Deprecate legacy api version",
+    "description": "Real-world PM scenario on deprecate legacy API version with conflicting stakeholder incentives and incomplete data.",
+    "difficulty": "beginner",
+    "category": "execution",
+    "version": 1,
+    "timeEstimateMinutes": 55,
+    "scenarioBrief": "You are a PM at PipeForge, a Series B API infrastructure company (230 employees, $24.3M ARR). Your immediate assignment is deprecate legacy API version. The executive team expects a recommendation before Friday's review. You have four context sources: a KPI snapshot, stakeholder notes, customer voice, and execution risk data. Each source is useful but incomplete, and at least one source is biased or contradictory. Choose the smallest plan that can prove value without increasing operational risk.",
+    "contextMaterials": [
+        {
+            "id": "kpi-snapshot",
+            "type": "data",
+            "title": "KPI Snapshot (Last 90 Days)",
+            "content": "Monthly active accounts: 43994\nNew logo adds: 3848\nActivation rate: 30%\n30-day retention: 44%\nNPS: -2 (n=258)\nExpansion rate in top cohort: 21%\nQuarter-over-quarter activation delta: 7 points\nQuarter-over-quarter retention delta: 6 points\nCaveat: NPS sample over-indexes power users and excludes the most recent downgraded accounts."
+        },
+        {
+            "id": "stakeholder-notes",
+            "type": "text",
+            "title": "Stakeholder Notes",
+            "content": "CRO (Evan Carter): \"Commercial momentum is fragile right now. Ambiguity in the plan will hurt conversion.\"\nVP Engineering (Derek Foster): \"Scope drift, not coding speed, is the main reason timelines slip. Lock boundaries now.\"\nHead of Customer Success (Victor Rossi): \"Customers are asking for predictability in week one more than net-new functionality.\"\nCommercial note: 2 late-stage deals cite this area as a decision factor.\nSupport note: 33 escalations in the last month mention related pain points.\nBias warning: projected revenue impact is directional and not contract-backed."
+        },
+        {
+            "id": "customer-voice",
+            "type": "text",
+            "title": "Customer Voice (Interview Snippets)",
+            "content": "Summit Manufacturing (Operations Lead): \"We see value quickly once configured, but the first session still feels too heavy.\"\nArbor Payments (IT Manager): \"Metric definitions changed between reports, which reduced confidence in decision meetings.\"\nFrontier Labs (Director of Product): \"Give us a narrower path that works consistently and we will scale internally.\"\nData gap: limited qualitative input from accounts that never activated."
+        },
+        {
+            "id": "delivery-risk",
+            "type": "data",
+            "title": "Delivery and Risk Snapshot",
+            "content": "Open P1/P2 issues: 16\nMedian cycle time: 6 days\nOn-time delivery last quarter: 51%\nShared platform dependencies unresolved: 2\nRelease rollback events last quarter: 1\nAverage time to resolve escalations: 70 hours\nContradiction: roadmap shows full utilization, but squads report 10-20% interrupt-driven bandwidth."
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "approach",
+            "hint": "Describe how you will sequence work under capacity and dependency constraints.",
+            "type": "textarea",
+            "label": "Execution Approach",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "priority-list",
+            "hint": "Rank the work and defend why this order is operationally realistic.",
+            "type": "textarea",
+            "label": "Priority Order",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "deps",
+            "hint": "Identify cross-team dependencies, owners, and failure points.",
+            "type": "textarea",
+            "label": "Critical Dependencies",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "cuts",
+            "hint": "Call out scope cuts and explain why each is acceptable.",
+            "type": "textarea",
+            "label": "What You Will Not Do",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "cadence",
+            "hint": "Define rituals, escalation triggers, and decision logs.",
+            "type": "textarea",
+            "label": "Operating Cadence",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "sequencing-rigor",
+            "name": "Sequencing Rigor",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Is the order of work realistic given dependencies and capacity?"
+        },
+        {
+            "id": "operational-clarity",
+            "name": "Operational Clarity",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are ownership, escalation paths, and cadences clear?"
+        },
+        {
+            "id": "risk-control",
+            "name": "Risk Control",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Does the plan proactively reduce delivery and quality risk?"
+        },
+        {
+            "id": "scope-discipline",
+            "name": "Scope Discipline",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are cuts and boundaries explicit and maintained?"
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "approach",
+            "content": "Recommendation: execute dependency-first. With 2 unresolved dependencies and 16 open P1/P2 issues, sequencing feature work before blocker removal will likely repeat prior slippage patterns."
+        },
+        {
+            "fieldId": "priority-list",
+            "content": "Priority 1 is reliability and defect containment tied to 33 monthly escalations. Priority 2 is instrumentation to validate impact. Priority 3 is highest-reach workflow improvements. Priority 4 is lower-leverage enhancements. This order improves delivery confidence."
+        },
+        {
+            "fieldId": "deps",
+            "content": "Critical dependencies include platform APIs, reporting pipelines, and security review SLA. Assign a single accountable owner per dependency and publish fallback paths. Current cycle time (6 days) and on-time rate (51%) require tighter dependency governance."
+        },
+        {
+            "fieldId": "cuts",
+            "content": "Cut speculative platform investments and low-reach custom requests this quarter. The opportunity cost is acceptable relative to unresolved risk and the need to stabilize core execution quality."
+        },
+        {
+            "fieldId": "cadence",
+            "content": "Run twice-weekly execution reviews, weekly risk checkpoints, and a persistent decision log. Derek Foster owns blocker escalations and Victor Rossi validates customer-impact closure each week."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Execution",
+            "fieldIds": [
+                "approach"
+            ]
+        },
+        {
+            "id": "step-2",
+            "title": "Priority",
+            "fieldIds": [
+                "priority-list"
+            ]
+        },
+        {
+            "id": "step-3",
+            "title": "Critical",
+            "fieldIds": [
+                "deps"
+            ]
+        },
+        {
+            "id": "step-4",
+            "title": "What",
+            "fieldIds": [
+                "cuts"
+            ]
+        },
+        {
+            "id": "step-5",
+            "title": "Operating",
+            "fieldIds": [
+                "cadence"
+            ]
+        }
+    ]
+}

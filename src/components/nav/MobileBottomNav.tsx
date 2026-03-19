@@ -32,8 +32,8 @@ export function MobileBottomNav() {
     const { user } = useUser();
 
     const navItems = [
-        { href: "/challenges", label: "Challenges", icon: challengesIcon },
         { href: "/dashboard", label: "Dashboard", icon: dashboardIcon },
+        { href: "/challenges", label: "Challenges", icon: challengesIcon },
         {
             href: user ? "/dashboard" : "/auth/login",
             label: user ? "Profile" : "Sign in",

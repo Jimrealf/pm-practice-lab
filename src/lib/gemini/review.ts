@@ -40,6 +40,7 @@ export async function runReview(
     try {
         const model = getGeminiModel();
         const prompt = buildReviewPrompt(challenge, fieldResponses);
+
         const result = await model.generateContent(prompt);
         const text = result.response.text();
 

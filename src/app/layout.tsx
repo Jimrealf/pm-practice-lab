@@ -52,7 +52,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <ToastProvider>
                         <TopNav />
-                        <main className="flex-1">{children}</main>
+                        <main className="flex-1 w-full min-w-0">{children}</main>
                         <MobileBottomNav />
                     </ToastProvider>
                 </ThemeProvider>

@@ -1,0 +1,167 @@
+{
+    "slug": "instrumentation-plan-for-new-checkout",
+    "title": "Instrumentation plan for new checkout",
+    "description": "Real-world PM scenario on instrumentation plan for new checkout with conflicting stakeholder incentives and incomplete data.",
+    "difficulty": "intermediate",
+    "category": "analytics",
+    "version": 1,
+    "timeEstimateMinutes": 30,
+    "scenarioBrief": "You are a PM at ShelfPilot, a Series A retail tech company (84 employees, $5.9M ARR). Your immediate assignment is instrumentation plan for new checkout. The executive team expects a recommendation before Friday's review. You have four context sources: a KPI snapshot, stakeholder notes, customer voice, and execution risk data. Each source is useful but incomplete, and at least one source is biased or contradictory. Optimize for repeatable outcomes over one-off wins that do not scale.",
+    "contextMaterials": [
+        {
+            "id": "kpi-snapshot",
+            "type": "data",
+            "title": "KPI Snapshot (Last 90 Days)",
+            "content": "Monthly active accounts: 95724\nNew logo adds: 1528\nActivation rate: 48%\n30-day retention: 33%\nNPS: 30 (n=238)\nExpansion rate in top cohort: 23%\nQuarter-over-quarter activation delta: -2 points\nQuarter-over-quarter retention delta: 8 points\nCaveat: NPS sample over-indexes power users and excludes the most recent downgraded accounts."
+        },
+        {
+            "id": "stakeholder-notes",
+            "type": "text",
+            "title": "Stakeholder Notes",
+            "content": "CRO (Asha Morris): \"Buyers are asking for proof points, not intent. We need visible traction fast.\"\nVP Engineering (Anya Gupta): \"Unresolved platform dependencies make estimates look precise but wrong.\"\nHead of Customer Success (Kira Park): \"Escalations spike after handoff because expectations are set too optimistically.\"\nCommercial note: 7 late-stage deals cite this area as a decision factor.\nSupport note: 41 escalations in the last month mention related pain points.\nBias warning: projected revenue impact is directional and not contract-backed."
+        },
+        {
+            "id": "customer-voice",
+            "type": "text",
+            "title": "Customer Voice (Interview Snippets)",
+            "content": "Helio Health Group (Operations Lead): \"We see value quickly once configured, but the first session still feels too heavy.\"\nOrbit Travel Co (IT Manager): \"A few avoidable errors in onboarding made the team question readiness.\"\nHarbor Wholesale (Director of Product): \"The concept is right, but edge-case handling still feels unfinished.\"\nData gap: support transcript tagging is inconsistent across segments."
+        },
+        {
+            "id": "delivery-risk",
+            "type": "data",
+            "title": "Delivery and Risk Snapshot",
+            "content": "Open P1/P2 issues: 38\nMedian cycle time: 6 days\nOn-time delivery last quarter: 64%\nShared platform dependencies unresolved: 5\nRelease rollback events last quarter: 0\nAverage time to resolve escalations: 60 hours\nContradiction: roadmap shows full utilization, but squads report 10-20% interrupt-driven bandwidth."
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "north-star",
+            "hint": "Name one north star metric and explain why it captures durable user value.",
+            "type": "textarea",
+            "label": "North Star Metric",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "supporting",
+            "hint": "Define supporting indicators and expected directional movement.",
+            "type": "textarea",
+            "label": "Leading and Lagging Metrics",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "readout",
+            "hint": "Interpret the current data while separating signal from noise.",
+            "type": "textarea",
+            "label": "Current Readout",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "gaps",
+            "hint": "Identify blind spots, sample bias, or conflicting definitions.",
+            "type": "textarea",
+            "label": "Data Gaps and Biases",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "instrumentation",
+            "hint": "Specify events, cohorts, and dashboards needed next.",
+            "type": "textarea",
+            "label": "Instrumentation and Reporting",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "metric-quality",
+            "name": "Metric Quality",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Do metrics reflect user value over vanity output?"
+        },
+        {
+            "id": "analysis-rigor",
+            "name": "Analysis Rigor",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Does interpretation account for bias, confounding, and sample limits?"
+        },
+        {
+            "id": "actionability",
+            "name": "Actionability",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are recommendations directly tied to observed signals?"
+        },
+        {
+            "id": "uncertainty-management",
+            "name": "Uncertainty Management",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are unknowns identified with a plan to resolve them?"
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "north-star",
+            "content": "Recommendation: use weekly active accounts completing the target workflow twice without support intervention as the north star. This ties value to repeat behavior across the 95724-account base rather than one-time activity."
+        },
+        {
+            "fieldId": "supporting",
+            "content": "Leading indicators: time to first value, setup completion, and error-free sessions. Lagging indicators: 30-day retention (33% baseline), expansion rate (23%), and escalations per 1,000 active accounts."
+        },
+        {
+            "fieldId": "readout",
+            "content": "Evidence is directionally useful but not conclusive. Activation is 48% and retention is 33%, but NPS (30, n=238) is sample-biased and support pressure (41 escalations) suggests unresolved quality variance."
+        },
+        {
+            "fieldId": "gaps",
+            "content": "Key gaps are missing churned-account interviews, inconsistent transcript tagging, and uneven cohort coverage after week two. With 5 unresolved dependencies, instrumentation completeness must be treated as a delivery risk."
+        },
+        {
+            "fieldId": "instrumentation",
+            "content": "Instrument cohort events for activation steps, error states, and support touches. Publish weekly segmented dashboards with denominator checks and confidence notes so stakeholder claims are compared on consistent evidence."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "North",
+            "fieldIds": [
+                "north-star"
+            ]
+        },
+        {
+            "id": "step-2",
+            "title": "Leading",
+            "fieldIds": [
+                "supporting"
+            ]
+        },
+        {
+            "id": "step-3",
+            "title": "Current",
+            "fieldIds": [
+                "readout"
+            ]
+        },
+        {
+            "id": "step-4",
+            "title": "Data",
+            "fieldIds": [
+                "gaps"
+            ]
+        },
+        {
+            "id": "step-5",
+            "title": "Instrumentat",
+            "fieldIds": [
+                "instrumentation"
+            ]
+        }
+    ]
+}

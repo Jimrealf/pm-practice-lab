@@ -9,8 +9,8 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 
 const navLinks = [
-    { href: "/challenges", label: "Challenges" },
     { href: "/dashboard", label: "Dashboard" },
+    { href: "/challenges", label: "Challenges" },
 ];
 
 export function TopNav() {

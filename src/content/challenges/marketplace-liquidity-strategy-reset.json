@@ -1,0 +1,167 @@
+{
+    "slug": "marketplace-liquidity-strategy-reset",
+    "title": "Marketplace liquidity strategy reset",
+    "description": "Real-world PM scenario on marketplace liquidity strategy reset with conflicting stakeholder incentives and incomplete data.",
+    "difficulty": "intermediate",
+    "category": "strategy",
+    "version": 1,
+    "timeEstimateMinutes": 60,
+    "scenarioBrief": "You are a PM at TaskHarbor, a Series C two-sided marketplace company (510 employees, $62.5M ARR). Your immediate assignment is marketplace liquidity strategy reset. The executive team expects a recommendation before Friday's review. You have four context sources: a KPI snapshot, stakeholder notes, customer voice, and execution risk data. Each source is useful but incomplete, and at least one source is biased or contradictory. Make trade-offs explicit so every team understands what we are not doing.",
+    "contextMaterials": [
+        {
+            "id": "kpi-snapshot",
+            "type": "data",
+            "title": "KPI Snapshot (Last 90 Days)",
+            "content": "Monthly active accounts: 32866\nNew logo adds: 3716\nActivation rate: 30%\n30-day retention: 30%\nNPS: -5 (n=255)\nExpansion rate in top cohort: 8%\nQuarter-over-quarter activation delta: 7 points\nQuarter-over-quarter retention delta: 0 points\nCaveat: NPS sample over-indexes power users and excludes the most recent downgraded accounts."
+        },
+        {
+            "id": "stakeholder-notes",
+            "type": "text",
+            "title": "Stakeholder Notes",
+            "content": "CRO (Mina Kim): \"Commercial momentum is fragile right now. Ambiguity in the plan will hurt conversion.\"\nVP Engineering (Victor Kim): \"We can move quickly if every blocker has an owner and fallback path.\"\nHead of Customer Success (Evan Morris): \"High-noise accounts dominate feedback threads, but silent churn in mid-market is the bigger risk.\"\nCommercial note: 9 late-stage deals cite this area as a decision factor.\nSupport note: 39 escalations in the last month mention related pain points.\nBias warning: projected revenue impact is directional and not contract-backed."
+        },
+        {
+            "id": "customer-voice",
+            "type": "text",
+            "title": "Customer Voice (Interview Snippets)",
+            "content": "Orbit Travel Co (Operations Lead): \"I can defend rollout if the first-week experience is consistent across teams.\"\nHarbor Wholesale (IT Manager): \"Metric definitions changed between reports, which reduced confidence in decision meetings.\"\nPinecrest Retail (Director of Product): \"Give us a narrower path that works consistently and we will scale internally.\"\nData gap: no structured interviews from churned accounts in the last 30 days."
+        },
+        {
+            "id": "delivery-risk",
+            "type": "data",
+            "title": "Delivery and Risk Snapshot",
+            "content": "Open P1/P2 issues: 35\nMedian cycle time: 26 days\nOn-time delivery last quarter: 82%\nShared platform dependencies unresolved: 8\nRelease rollback events last quarter: 4\nAverage time to resolve escalations: 38 hours\nContradiction: roadmap shows full utilization, but squads report 10-20% interrupt-driven bandwidth."
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "decision",
+            "hint": "State your decision in one sentence, then justify it with evidence and constraints.",
+            "type": "textarea",
+            "label": "Decision and Recommendation",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "options",
+            "hint": "Compare at least two viable alternatives and what each sacrifices.",
+            "type": "textarea",
+            "label": "Alternatives and Trade-offs",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "scope",
+            "hint": "Define the primary segment and who is explicitly deprioritized.",
+            "type": "textarea",
+            "label": "Who This Optimizes For",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "risks",
+            "hint": "List top risks and concrete guardrails to limit downside.",
+            "type": "textarea",
+            "label": "Key Risks and Guardrails",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "plan",
+            "hint": "Break down phases, owners, and stop/go checkpoints.",
+            "type": "textarea",
+            "label": "90-Day Execution Plan",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "decision-quality",
+            "name": "Decision Quality",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Is the recommendation specific, evidence-based, and timely?"
+        },
+        {
+            "id": "tradeoff-rigor",
+            "name": "Trade-off Rigor",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are trade-offs explicit, quantified where possible, and defensible?"
+        },
+        {
+            "id": "stakeholder-awareness",
+            "name": "Stakeholder Awareness",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Does the proposal handle competing incentives credibly?"
+        },
+        {
+            "id": "intellectual-honesty",
+            "name": "Intellectual Honesty",
+            "weight": 1,
+            "criteria": "Score 8-10: Uses specific evidence from at least three context sources, states assumptions, and makes clear trade-offs. Score 5-7: Directionally sound but missing precision on evidence, caveats, or execution details. Score 1-4: Generic response with weak linkage to context and constraints.",
+            "description": "Are uncertainty and assumptions clearly acknowledged?"
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "decision",
+            "content": "Recommendation: run a bounded pilot with reliability guardrails. Baseline today is activation 30% and 30-day retention 30% across 32866 active accounts. Scale only if activation improves by at least 4 points without retention regression."
+        },
+        {
+            "fieldId": "options",
+            "content": "Option A is broad rollout now to support near-term sales urgency tied to 9 late-stage deals. Option B is reliability-only focus with deferred expansion. Option C combines targeted rollout with dependency reduction from 8 unresolved items. Option C is the best risk-adjusted path."
+        },
+        {
+            "fieldId": "scope",
+            "content": "Optimize for repeat-use mid-market teams where onboarding friction is most visible in recent escalations (39). Deprioritize bespoke edge cases this cycle because cycle time is 26 days and on-time delivery is 82%."
+        },
+        {
+            "fieldId": "risks",
+            "content": "Key risks are dependency slippage, overreliance on projected revenue, and trust erosion from reliability events. Guardrails: weekly dependency review with Victor Kim, explicit non-goals, and rollback if escalation volume increases more than 15% week-over-week."
+        },
+        {
+            "fieldId": "plan",
+            "content": "Weeks 1-2 lock scope and instrumentation. Weeks 3-6 run pilot and reliability fixes. Weeks 7-10 evaluate cohort movement against activation/retention deltas and NPS confidence limits (n=255). Weeks 11-12 decide scale, pivot, or stop with documented trade-offs."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Decision",
+            "fieldIds": [
+                "decision"
+            ]
+        },
+        {
+            "id": "step-2",
+            "title": "Alternatives",
+            "fieldIds": [
+                "options"
+            ]
+        },
+        {
+            "id": "step-3",
+            "title": "Who",
+            "fieldIds": [
+                "scope"
+            ]
+        },
+        {
+            "id": "step-4",
+            "title": "Key",
+            "fieldIds": [
+                "risks"
+            ]
+        },
+        {
+            "id": "step-5",
+            "title": "90-Day",
+            "fieldIds": [
+                "plan"
+            ]
+        }
+    ]
+}
