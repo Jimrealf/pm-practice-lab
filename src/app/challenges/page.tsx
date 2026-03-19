@@ -1,13 +1,28 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import prdChallenge from "@/content/challenges/write-a-prd.json";
-import backlogChallenge from "@/content/challenges/prioritize-backlog.json";
-import metricsChallenge from "@/content/challenges/define-metrics.json";
+import { Skeleton } from "@/components/ui/Skeleton";
+import { createClient } from "@/lib/supabase/server";
+import type { Challenge } from "@/types/challenge";
 
-const challenges = [prdChallenge, backlogChallenge, metricsChallenge];
+export default async function ChallengesPage() {
+    const supabase = await createClient();
+    const { data: challenges, error } = await supabase
+        .from("challenges")
+        .select("slug, title, description, difficulty, category, time_estimate_minutes")
+        .order("difficulty")
+        .returns<Challenge[]>();
 
-export default function ChallengesPage() {
+    if (error) {
+        return (
+            <div className="max-w-[1200px] mx-auto px-6 py-12">
+                <p className="text-text-secondary">
+                    Failed to load challenges. Please try again.
+                </p>
+            </div>
+        );
+    }
+
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-12">
             <h1 className="font-display font-bold text-[32px] text-text-primary">
@@ -32,7 +47,7 @@ export default function ChallengesPage() {
                                     {challenge.category}
                                 </Badge>
                                 <span className="text-[12px] text-text-tertiary ml-auto">
-                                    {challenge.timeEstimateMinutes} min
+                                    {challenge.time_estimate_minutes} min
                                 </span>
                             </div>
                             <h2 className="mt-3 font-display font-bold text-[18px] text-text-primary">

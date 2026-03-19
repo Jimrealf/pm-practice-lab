@@ -1,3 +1,5 @@
+import { toSentenceCase } from "@/lib/format";
+
 type BadgeVariant = "difficulty" | "category" | "status";
 
 interface BadgeProps {
@@ -13,6 +15,9 @@ const variantStyles: Record<BadgeVariant, string> = {
 };
 
 export function Badge({ variant = "category", className = "", children }: BadgeProps) {
+    const formatted =
+        typeof children === "string" ? toSentenceCase(children) : children;
+
     return (
         <span
             className={`
@@ -23,7 +28,7 @@ export function Badge({ variant = "category", className = "", children }: BadgeP
                 ${className}
             `.trim()}
         >
-            {children}
+            {formatted}
         </span>
     );
 }

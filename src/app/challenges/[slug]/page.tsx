@@ -3,15 +3,8 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import prdChallenge from "@/content/challenges/write-a-prd.json";
-import backlogChallenge from "@/content/challenges/prioritize-backlog.json";
-import metricsChallenge from "@/content/challenges/define-metrics.json";
-
-const challengeMap: Record<string, typeof prdChallenge> = {
-    "write-a-prd": prdChallenge,
-    "prioritize-backlog": backlogChallenge,
-    "define-metrics": metricsChallenge,
-};
+import { createClient } from "@/lib/supabase/server";
+import type { Challenge } from "@/types/challenge";
 
 export default async function ChallengeDetailPage({
     params,
@@ -19,7 +12,13 @@ export default async function ChallengeDetailPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const challenge = challengeMap[slug];
+    const supabase = await createClient();
+
+    const { data: challenge } = await supabase
+        .from("challenges")
+        .select("*")
+        .eq("slug", slug)
+        .single<Challenge>();
 
     if (!challenge) {
         notFound();
@@ -32,7 +31,7 @@ export default async function ChallengeDetailPage({
                     <Badge variant="difficulty">{challenge.difficulty}</Badge>
                     <Badge variant="category">{challenge.category}</Badge>
                     <span className="text-[12px] text-text-tertiary ml-2">
-                        {challenge.timeEstimateMinutes} min
+                        {challenge.time_estimate_minutes} min
                     </span>
                 </div>
 
@@ -49,7 +48,7 @@ export default async function ChallengeDetailPage({
                         The scenario
                     </h2>
                     <div className="mt-4 font-mono text-[14px] text-text-primary leading-relaxed whitespace-pre-line">
-                        {challenge.scenarioBrief}
+                        {challenge.scenario_brief}
                     </div>
                 </div>
 
@@ -58,7 +57,7 @@ export default async function ChallengeDetailPage({
                         Context materials
                     </h2>
                     <div className="mt-4 space-y-4">
-                        {challenge.contextMaterials.map((material) => (
+                        {challenge.context_materials.map((material) => (
                             <details
                                 key={material.id}
                                 className="group"
@@ -92,7 +91,7 @@ export default async function ChallengeDetailPage({
                         What you will submit
                     </h2>
                     <ul className="mt-4 space-y-2">
-                        {challenge.submissionFields.map((field) => (
+                        {challenge.submission_fields.map((field) => (
                             <li
                                 key={field.id}
                                 className="text-[14px] text-text-secondary"

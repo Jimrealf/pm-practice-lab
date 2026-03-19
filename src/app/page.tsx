@@ -2,9 +2,17 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import challenge from "@/content/challenges/write-a-prd.json";
+import { createClient } from "@/lib/supabase/server";
+import type { Challenge } from "@/types/challenge";
 
-export default function HomePage() {
+export default async function HomePage() {
+    const supabase = await createClient();
+    const { data: featured } = await supabase
+        .from("challenges")
+        .select("slug, title, description, difficulty, category, time_estimate_minutes")
+        .eq("slug", "write-a-prd")
+        .single<Challenge>();
+
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-12">
             <section className="max-w-[680px]">
@@ -62,33 +70,35 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="mt-16">
-                <h2 className="font-display font-bold text-[24px] text-text-primary">
-                    Featured challenge
-                </h2>
-                <Card hoverable className="mt-6 p-6 max-w-[680px]">
-                    <div className="flex items-center gap-2">
-                        <Badge variant="difficulty">{challenge.difficulty}</Badge>
-                        <Badge variant="category">{challenge.category}</Badge>
-                        <span className="text-[12px] text-text-tertiary ml-auto">
-                            {challenge.timeEstimateMinutes} min
-                        </span>
-                    </div>
-                    <h3 className="mt-3 font-display font-bold text-[18px] text-text-primary">
-                        {challenge.title}
-                    </h3>
-                    <p className="mt-2 text-[14px] text-text-secondary leading-relaxed">
-                        {challenge.description}
-                    </p>
-                    <div className="mt-4">
-                        <Link href={`/challenges/${challenge.slug}`}>
-                            <Button variant="secondary" size="sm">
-                                View challenge
-                            </Button>
-                        </Link>
-                    </div>
-                </Card>
-            </section>
+            {featured && (
+                <section className="mt-16">
+                    <h2 className="font-display font-bold text-[24px] text-text-primary">
+                        Featured challenge
+                    </h2>
+                    <Card hoverable className="mt-6 p-6 max-w-[680px]">
+                        <div className="flex items-center gap-2">
+                            <Badge variant="difficulty">{featured.difficulty}</Badge>
+                            <Badge variant="category">{featured.category}</Badge>
+                            <span className="text-[12px] text-text-tertiary ml-auto">
+                                {featured.time_estimate_minutes} min
+                            </span>
+                        </div>
+                        <h3 className="mt-3 font-display font-bold text-[18px] text-text-primary">
+                            {featured.title}
+                        </h3>
+                        <p className="mt-2 text-[14px] text-text-secondary leading-relaxed">
+                            {featured.description}
+                        </p>
+                        <div className="mt-4">
+                            <Link href={`/challenges/${featured.slug}`}>
+                                <Button variant="secondary" size="sm">
+                                    View challenge
+                                </Button>
+                            </Link>
+                        </div>
+                    </Card>
+                </section>
+            )}
         </div>
     );
 }

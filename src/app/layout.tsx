@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { ToastProvider } from "@/components/ui/Toast";
 import { TopNav } from "@/components/nav/TopNav";
 import { MobileBottomNav } from "@/components/nav/MobileBottomNav";
 import "./globals.css";
@@ -50,10 +50,11 @@ export default function RootLayout({
             </head>
             <body className="min-h-screen flex flex-col pb-16 md:pb-0">
                 <ThemeProvider>
-                    <ThemeToggle />
-                    <TopNav />
-                    <main className="flex-1">{children}</main>
-                    <MobileBottomNav />
+                    <ToastProvider>
+                        <TopNav />
+                        <main className="flex-1">{children}</main>
+                        <MobileBottomNav />
+                    </ToastProvider>
                 </ThemeProvider>
             </body>
         </html>
