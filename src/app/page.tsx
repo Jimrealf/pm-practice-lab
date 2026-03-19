@@ -10,8 +10,9 @@ export default async function HomePage() {
     const { data: featured } = await supabase
         .from("challenges")
         .select("slug, title, description, difficulty, category, time_estimate_minutes")
-        .eq("slug", "write-a-prd")
-        .single<Challenge>();
+        .in("slug", ["write-a-prd", "prioritize-backlog", "define-metrics"])
+        .order("difficulty")
+        .returns<Challenge[]>();
 
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-12">
@@ -70,33 +71,35 @@ export default async function HomePage() {
                 </div>
             </section>
 
-            {featured && (
+            {featured && featured.length > 0 && (
                 <section className="mt-16">
                     <h2 className="font-display font-bold text-[24px] text-text-primary">
-                        Featured challenge
+                        Featured challenges
                     </h2>
-                    <Card hoverable className="mt-6 p-6 max-w-[680px]">
-                        <div className="flex items-center gap-2">
-                            <Badge variant="difficulty">{featured.difficulty}</Badge>
-                            <Badge variant="category">{featured.category}</Badge>
-                            <span className="text-[12px] text-text-tertiary ml-auto">
-                                {featured.time_estimate_minutes} min
-                            </span>
-                        </div>
-                        <h3 className="mt-3 font-display font-bold text-[18px] text-text-primary">
-                            {featured.title}
-                        </h3>
-                        <p className="mt-2 text-[14px] text-text-secondary leading-relaxed">
-                            {featured.description}
-                        </p>
-                        <div className="mt-4">
-                            <Link href={`/challenges/${featured.slug}`}>
-                                <Button variant="secondary" size="sm">
-                                    View challenge
-                                </Button>
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {featured.map((challenge) => (
+                            <Link key={challenge.slug} href={`/challenges/${challenge.slug}`}>
+                                <Card hoverable className="p-6 h-full flex flex-col">
+                                    <div className="flex items-center gap-2">
+                                        <Badge variant="difficulty">{challenge.difficulty}</Badge>
+                                        <Badge variant="category">{challenge.category}</Badge>
+                                        <span className="text-[12px] text-text-tertiary ml-auto">
+                                            {challenge.time_estimate_minutes} min
+                                        </span>
+                                    </div>
+                                    <h3 className="mt-3 font-display font-bold text-[18px] text-text-primary">
+                                        {challenge.title}
+                                    </h3>
+                                    <p className="mt-2 text-[14px] text-text-secondary leading-relaxed flex-1">
+                                        {challenge.description}
+                                    </p>
+                                    <div className="mt-4 text-[13px] font-medium text-accent">
+                                        Start challenge
+                                    </div>
+                                </Card>
                             </Link>
-                        </div>
-                    </Card>
+                        ))}
+                    </div>
                 </section>
             )}
         </div>
