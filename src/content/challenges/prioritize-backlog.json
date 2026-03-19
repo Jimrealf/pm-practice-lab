@@ -1,0 +1,134 @@
+{
+    "slug": "prioritize-backlog",
+    "title": "Prioritize a Messy Backlog",
+    "description": "You inherited a 30-item backlog with no clear priorities. Sales, Engineering, and Customer Success each have competing requests. Make sense of the chaos.",
+    "difficulty": "intermediate",
+    "category": "execution",
+    "version": 1,
+    "timeEstimateMinutes": 45,
+    "scenarioBrief": "You just started as PM at DataBridge, a Series A analytics platform ($3M ARR, 60 employees). The previous PM left abruptly two weeks ago. You inherited a Jira board with 30 items, no priority labels, no sprint planning, and three stakeholders who each think their requests are the most important.\n\nYour VP of Product wants you to present a prioritized top-10 list at the all-hands meeting on Friday. That gives you 3 days to make sense of this backlog and justify every decision.\n\nThe complication: the data you have is incomplete. Some revenue impact estimates come from Sales (who tend to overstate urgency), the NPS data has a small sample size, and the engineering effort estimates were done by the previous PM, not the engineering team.",
+    "contextMaterials": [
+        {
+            "id": "backlog-items",
+            "title": "Current Backlog (Top 15 of 30)",
+            "type": "data",
+            "content": "1. SSO integration for enterprise clients (Sales: \"We will lose 3 deals worth $400K\")\n2. Fix CSV export timeout on large datasets (12 support tickets this month)\n3. Dashboard loading time optimization (P95 is 8 seconds, target is 2)\n4. Custom date range picker for reports (requested by 8 customers in feedback portal)\n5. Slack integration for alert notifications (Sales: \"Every competitor has this\")\n6. Data retention policy settings (legal compliance requirement, deadline Q4)\n7. Mobile-responsive dashboard view (usage data shows 4% mobile traffic)\n8. Bulk user import via CSV (3 enterprise prospects asked for this in demos)\n9. Role-based access controls (current system is all-or-nothing)\n10. API rate limit increase (2 customers hitting limits, both on Enterprise plan)\n11. Onboarding flow redesign (activation rate is 34%, industry avg is 55%)\n12. Webhook support for data pipeline triggers (1 large customer threatening churn)\n13. White-label option for agency resellers (Sales: \"Huge opportunity\")\n14. Fix timezone display bug in scheduled reports (affects all users)\n15. A/B testing framework for in-app experiments (engineering wants this for internal use)"
+        },
+        {
+            "id": "revenue-data",
+            "title": "Revenue and Retention Data",
+            "type": "data",
+            "content": "Current ARR: $3M across 180 customers\nSegment breakdown:\n- Enterprise ($10K+/yr): 15 customers, $1.2M ARR, 95% retention\n- Mid-market ($3K-10K/yr): 45 customers, $1.1M ARR, 82% retention\n- SMB (under $3K/yr): 120 customers, $700K ARR, 68% retention\n\nNPS (last quarter, n=47): +18 (below SaaS benchmark of +30)\nTop complaint themes: slow dashboards (31%), missing integrations (24%), confusing permissions (19%)\n\nChurn reasons (last 6 months, 23 churned customers):\n- \"Too slow\" - 8 customers\n- \"Missing features competitors have\" - 6 customers\n- \"Too expensive for what we get\" - 5 customers\n- \"Security/compliance concerns\" - 4 customers"
+        },
+        {
+            "id": "stakeholder-context",
+            "title": "Stakeholder Perspectives",
+            "type": "text",
+            "content": "Head of Sales (Derek): \"I have 3 enterprise deals in pipeline worth $400K combined. They all need SSO and RBAC. If we do not ship these in Q3, I lose the deals and we miss our revenue target. Everything else can wait.\"\n\nHead of Engineering (Nadia): \"The dashboard performance problem is getting worse every month as data volumes grow. If we do not address it now, it becomes a 3-month project instead of a 3-week project. Also, half the items on this backlog have no engineering estimates. I need time to scope them before you prioritize.\"\n\nHead of Customer Success (Raj): \"Our NPS is tanking. The top complaints are all fixable: slow dashboards, timezone bug, CSV export failures. These affect every customer, every day. The enterprise features help 15 customers. The fixes help 180.\""
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "framework",
+            "label": "Prioritization Framework",
+            "hint": "Which framework are you using and why? How did you adapt it for incomplete data?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 1500
+        },
+        {
+            "id": "top-10",
+            "label": "Top 10 Ranked Items with Rationale",
+            "hint": "List your top 10 in priority order. For each, explain why it is ranked where it is.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "deprioritized",
+            "label": "What You Deprioritized and Why",
+            "hint": "Which items did you cut or defer? What trade-offs are you making?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "stakeholder-plan",
+            "label": "Stakeholder Communication Plan",
+            "hint": "How will you communicate this prioritization to Derek, Nadia, and Raj? Especially the items that did not make the cut.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "framework-rigor",
+            "name": "Framework Rigor",
+            "description": "Is the prioritization framework well-chosen and consistently applied?",
+            "criteria": "Score 8-10: Framework is appropriate for the context, adapted for incomplete data, and applied consistently across all items. Acknowledges limitations of the data. Score 5-7: Framework is reasonable but may not account for data quality issues. Score 1-4: No clear framework, or framework is applied inconsistently.",
+            "weight": 1
+        },
+        {
+            "id": "data-usage",
+            "name": "Data Usage",
+            "description": "Does the prioritization leverage available data effectively?",
+            "criteria": "Score 8-10: Uses revenue data, NPS themes, churn reasons, and support tickets to justify decisions. Explicitly flags where data is unreliable (e.g., Sales estimates). Score 5-7: References some data but misses key signals. Score 1-4: Decisions appear gut-based or rely on a single data source.",
+            "weight": 1
+        },
+        {
+            "id": "stakeholder-awareness",
+            "name": "Stakeholder Awareness",
+            "description": "Does the plan account for stakeholder dynamics and politics?",
+            "criteria": "Score 8-10: Addresses each stakeholder's concerns directly. Communication plan shows empathy and strategic framing. Manages expectations for deprioritized items. Score 5-7: Acknowledges stakeholders but communication plan is vague. Score 1-4: Ignores stakeholder dynamics or simply defers to the loudest voice.",
+            "weight": 1
+        },
+        {
+            "id": "tradeoff-articulation",
+            "name": "Trade-off Articulation",
+            "description": "Are trade-offs explicitly identified and justified?",
+            "criteria": "Score 8-10: Every prioritization decision includes what you are giving up and why the trade-off is acceptable. Acknowledges tension between quick wins (bug fixes) and strategic investments (enterprise features). Score 5-7: Some trade-offs identified but not all are justified. Score 1-4: Trade-offs are ignored or not discussed.",
+            "weight": 1
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "framework",
+            "content": "Using a modified RICE framework (Reach, Impact, Confidence, Effort) with two key adaptations for this context:\n\n1. Confidence adjustment: Sales revenue estimates get a 0.5 confidence multiplier because Derek has an incentive to overstate urgency. Engineering estimates from the previous PM get a 0.7 multiplier because they were not validated by the current team. Support ticket counts and NPS data get a 0.9 multiplier (more objective but small sample).\n\n2. Strategic weight: Items that address the top churn reason (\"too slow\") get a 1.5x multiplier on Impact, because retention is more valuable than acquisition at this stage ($3M ARR with 68% SMB retention is a leaky bucket).\n\nI also added a \"blocking\" flag for items with hard deadlines (legal compliance) or where delay makes the problem worse (performance degradation)."
+        },
+        {
+            "fieldId": "top-10",
+            "content": "1. Dashboard loading time optimization - Addresses the #1 churn reason (8 of 23 churned for \"too slow\"), affects all 180 customers, and gets worse over time per Nadia. This is both the highest-impact fix and the most time-sensitive.\n\n2. Fix CSV export timeout - 12 support tickets this month means roughly 7% of customers are hitting this. It is a data platform that cannot export data. Fix the core promise first.\n\n3. Fix timezone display bug - Affects all users on scheduled reports. Small effort, high trust impact. Quick win that improves NPS.\n\n4. Data retention policy settings - Hard legal deadline in Q4. Non-negotiable. Start now to avoid a crunch.\n\n5. SSO integration - Validates Derek's pipeline, but with a confidence-adjusted value of $200K (not $400K). Still significant. Enterprise retention is 95%, so protecting this segment matters.\n\n6. Role-based access controls - Third most common NPS complaint (19%). Also a prerequisite for enterprise expansion. Pairs well with SSO.\n\n7. Onboarding flow redesign - 34% activation rate vs 55% industry average means we are losing 40% of potential customers before they see value. Highest leverage for growth.\n\n8. Webhook support - One large customer threatening churn. Need to assess deal size, but a single enterprise churn could be $80K+ ARR.\n\n9. API rate limit increase - Small effort to retain 2 Enterprise customers. Quick win.\n\n10. Slack integration - Addresses \"missing integrations\" churn theme (6 customers). But confidence is lower because \"every competitor has this\" is a Sales talking point, not validated demand."
+        },
+        {
+            "fieldId": "deprioritized",
+            "content": "Deferred:\n- Mobile responsive dashboard (4% mobile traffic does not justify the effort)\n- Bulk user import (nice-to-have for prospects, not retention driver)\n- White-label option (\"huge opportunity\" from Sales needs validation with actual prospect data before committing engineering resources)\n- A/B testing framework (internal tool request, not customer-facing value)\n- Custom date range picker (8 customer requests is meaningful but lower impact than items above)\n\nTrade-offs I am making:\n- Prioritizing retention over acquisition. The leaky bucket (68% SMB retention) must be fixed before pouring more in.\n- Prioritizing all-customer fixes over enterprise-only features. Derek will push back, but items 1-3 affect 180 customers while SSO affects 15.\n- Deferring white-label despite Sales enthusiasm. Without validated demand (signed LOIs or committed pilots), this is speculative. I would rather have Derek bring me a signed commitment before we build it.\n- Accepting risk on the Slack integration ranking. It could be higher, but I need to validate the demand signal beyond \"competitors have it.\""
+        },
+        {
+            "fieldId": "stakeholder-plan",
+            "content": "Derek (Sales): \"SSO and RBAC are in the top 10 at positions 5 and 6. I hear you that these deals matter. Here is what I need from you: can you get written confirmation from those prospects that SSO is the blocking factor? That data helps me keep these prioritized against competing requests. On white-label, I would love to pursue it, but I need a signed LOI or committed pilot before we invest engineering time. Can you work with those agencies to get that?\"\n\nNadia (Engineering): \"I agree that dashboard performance is urgent and it is ranked #1. I need your team to re-estimate items 5-10 this week so we have accurate effort numbers for sprint planning. I will not commit to timelines until your team has scoped the work. Also, I carved out the first sprint for the timezone bug and CSV fix, both small efforts that will build team momentum before we tackle the bigger items.\"\n\nRaj (Customer Success): \"Three of the top 4 items are the exact fixes your team has been asking for: dashboard speed, CSV export, and timezone bug. I hear you that these affect every customer. Here is what I need from you: track which support conversations are directly about these issues so we can measure the impact after we ship the fixes. That data helps me justify continued investment in reliability over new features.\"\n\nAll-hands framing: \"We are prioritizing reliability and retention first, then strategic growth. Fixing the foundation before adding new floors.\""
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Framework",
+            "fieldIds": ["framework"]
+        },
+        {
+            "id": "step-2",
+            "title": "Top 10",
+            "fieldIds": ["top-10"]
+        },
+        {
+            "id": "step-3",
+            "title": "Deprioritized",
+            "fieldIds": ["deprioritized"]
+        },
+        {
+            "id": "step-4",
+            "title": "Communication",
+            "fieldIds": ["stakeholder-plan"]
+        }
+    ]
+}

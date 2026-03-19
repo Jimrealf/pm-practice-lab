@@ -1,0 +1,192 @@
+{
+    "slug": "write-a-prd",
+    "title": "Write a PRD for a New Feature",
+    "description": "Your CEO wants a self-serve onboarding feature. You have contradictory research, incomplete data, and a skeptical VP of Engineering. Write the PRD.",
+    "difficulty": "intermediate",
+    "category": "strategy",
+    "version": 1,
+    "timeEstimateMinutes": 60,
+    "scenarioBrief": "You are a PM at TechFlow, a mid-stage B2B SaaS company (Series B, 200 employees, $15M ARR) that sells a workflow automation platform to mid-market companies. Your CEO just pulled you into a meeting and said: \"We need self-serve onboarding. Our sales-assisted model is great, but we are leaving money on the table. Smaller companies want to try before they buy, and our competitors let them do that. I want a plan on my desk by Friday.\"\n\nThe catch: you have user research excerpts that contradict each other, usage data with gaps, an engineering capacity estimate that is tight, and a VP of Engineering who is skeptical about the timeline. Welcome to Tuesday.",
+    "contextMaterials": [
+        {
+            "id": "user-research",
+            "title": "User Research Excerpts",
+            "type": "text",
+            "content": "Interview #1 (Sarah, Ops Manager at 50-person logistics company): \"We signed up for a trial of your competitor last month. Within 20 minutes I had a workflow running. With TechFlow, I had to schedule a demo, wait 3 days, sit through a 45-minute call, then wait for access. By then we had already bought the other tool.\"\n\nInterview #2 (Marcus, CTO at 300-person fintech): \"Self-serve onboarding would be a disaster for us. We need someone to walk us through compliance configurations. If we set something up wrong, that is a regulatory risk. I would never trust a product tour for that.\"\n\nInterview #3 (Priya, Product Lead at 80-person e-commerce startup): \"I tried your free trial page six months ago. It asked me to fill out 12 fields, then said someone would contact me. I closed the tab.\"\n\nSurvey data (n=340 trial requests): 62% of companies requesting trials have fewer than 100 employees. Average time from trial request to first login: 4.2 days. 38% of trial requests never convert to a first login."
+        },
+        {
+            "id": "usage-data",
+            "title": "Usage Analytics (Partial)",
+            "type": "data",
+            "content": "Active customers by segment:\n- Enterprise (500+ employees): 45 customers, $8.2M ARR, avg deal size $182K\n- Mid-market (100-499): 120 customers, $5.1M ARR, avg deal size $42.5K\n- SMB (under 100): 23 customers, $1.7M ARR, avg deal size $73.9K\n\nNote: SMB segment is growing 40% QoQ but has the highest churn (18% annual vs 6% enterprise).\n\nOnboarding funnel (current, sales-assisted):\n- Trial request: 100%\n- Demo scheduled: 72%\n- Demo completed: 58%\n- Trial activated: 41%\n- Paid conversion: 22%\n\nData gap: We do not track what users do during their first 30 minutes after trial activation. Engineering says adding this tracking is a 2-sprint effort."
+        },
+        {
+            "id": "eng-capacity",
+            "title": "Engineering Capacity Estimate",
+            "type": "text",
+            "content": "From VP Engineering (Jamie):\n\n\"I can give you one squad (2 senior engineers, 1 mid-level, 1 frontend) for Q3. That is 4 people for 13 weeks. But I need to flag: we have a major infrastructure migration in Q3 that will pull the senior engineers for at least 3 weeks. So realistically you have about 10 productive weeks from 4 people, minus the usual 20% overhead for bugs, on-call, and meetings. Call it 8 effective weeks.\n\nAlso, I am skeptical about the 'just add self-serve onboarding' framing. Our product has 14 configuration steps for a new workspace. You cannot just throw a product tour on top of that and call it self-serve. We would need to fundamentally simplify the setup flow, which means touching core platform code that has not been refactored in 2 years.\n\nI am not saying no. I am saying this is harder than the CEO thinks it is.\""
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "problem-statement",
+            "label": "Problem Statement",
+            "hint": "What specific problem are you solving? For whom? What evidence supports this?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "target-users",
+            "label": "Target Users",
+            "hint": "Who is the primary user for self-serve onboarding? Be specific about company size, role, and use case.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 1500
+        },
+        {
+            "id": "success-metrics",
+            "label": "Success Metrics",
+            "hint": "How will you measure whether this feature succeeds? Include both leading and lagging indicators.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 1500
+        },
+        {
+            "id": "proposed-solution",
+            "label": "Proposed Solution",
+            "hint": "What are you building? Describe the user experience, not just the technical implementation.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 3000
+        },
+        {
+            "id": "prioritized-requirements",
+            "label": "Prioritized Requirements (P0 / P1 / P2)",
+            "hint": "What must ship in v1 (P0), what should ship if time allows (P1), and what can wait (P2)?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2500
+        },
+        {
+            "id": "risks-mitigations",
+            "label": "Risks and Mitigations",
+            "hint": "What could go wrong? Think about technical, business, and user risks.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "launch-plan",
+            "label": "Launch Plan",
+            "hint": "How will you roll this out? Consider phasing, testing, and stakeholder communication.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        }
+    ],
+    "rubric": [
+        {
+            "id": "clarity",
+            "name": "Clarity",
+            "description": "How clear and well-structured is the PRD?",
+            "criteria": "Score 8-10: Problem statement is specific, measurable, and grounded in evidence. Requirements are unambiguous. A developer could start building from this. Score 5-7: Mostly clear but some ambiguity in requirements or success criteria. Score 1-4: Vague problem statement, unclear requirements, or missing key sections.",
+            "weight": 1
+        },
+        {
+            "id": "user-centricity",
+            "name": "User-Centricity",
+            "description": "Does the PRD demonstrate deep understanding of the target user?",
+            "criteria": "Score 8-10: Target user is specific (not 'all users'). Solution addresses real user pain points from the research. Contradictory data is acknowledged and resolved. Score 5-7: User is identified but solution may not fully address their needs. Some research is referenced. Score 1-4: Generic user description. Solution does not connect to research findings.",
+            "weight": 1
+        },
+        {
+            "id": "feasibility",
+            "name": "Feasibility",
+            "description": "Is the plan realistic given the constraints?",
+            "criteria": "Score 8-10: Scope fits within the engineering capacity. Technical risks are identified. The plan acknowledges the VP of Engineering's concerns about core platform complexity. Score 5-7: Mostly feasible but may underestimate effort or ignore some constraints. Score 1-4: Ignores engineering constraints or proposes unrealistic scope.",
+            "weight": 1
+        },
+        {
+            "id": "measurability",
+            "name": "Measurability",
+            "description": "Are success metrics well-defined and actionable?",
+            "criteria": "Score 8-10: Includes both leading indicators (activation rate, time-to-value) and lagging indicators (conversion, revenue). Metrics have specific targets and timeframes. Addresses the data gap. Score 5-7: Some metrics defined but may lack targets or miss leading indicators. Score 1-4: Vague metrics like 'increase conversions' without specifics.",
+            "weight": 1
+        },
+        {
+            "id": "prioritization-quality",
+            "name": "Prioritization Quality",
+            "description": "Are requirements well-prioritized with clear rationale?",
+            "criteria": "Score 8-10: Clear P0/P1/P2 separation with explicit rationale for each tier. Demonstrates trade-off thinking. V1 scope is achievable. Score 5-7: Priorities exist but rationale is thin or P0 scope is too large. Score 1-4: No clear prioritization or everything is labeled P0.",
+            "weight": 1
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "problem-statement",
+            "content": "TechFlow is losing 38% of potential customers before they ever log in. Our sales-assisted onboarding model creates a 4.2-day gap between trial request and first login, during which competitors with self-serve models capture these prospects. The problem is most acute in the SMB segment (under 100 employees), which represents 62% of trial requests but only $1.7M of our $15M ARR. These smaller companies want to evaluate tools independently and quickly. Sarah's story illustrates this perfectly: she had a competitor's workflow running in 20 minutes while waiting 3 days just for TechFlow access.\n\nHowever, self-serve is not appropriate for all segments. Marcus's feedback makes clear that enterprise and regulated mid-market customers need guided onboarding for compliance configuration. This PRD focuses on enabling self-serve for the SMB segment while preserving the sales-assisted path for enterprise."
+        },
+        {
+            "fieldId": "target-users",
+            "content": "Primary: Operations managers and product leads at companies with fewer than 100 employees in non-regulated industries (e-commerce, SaaS, professional services). They are evaluating 2-3 workflow tools simultaneously. They want to see value within 30 minutes. They will not wait for a sales call.\n\nSecondary: Individual contributors at mid-market companies who want to prototype a workflow before bringing in their IT team for formal evaluation.\n\nExplicitly excluded from v1: Enterprise customers and companies in regulated industries (fintech, healthcare) where compliance configuration requires guided setup."
+        },
+        {
+            "fieldId": "success-metrics",
+            "content": "Primary metrics (measured at 90 days post-launch):\n- Time from signup to first workflow created: target under 15 minutes (currently 4.2 days for sales-assisted)\n- Self-serve trial-to-paid conversion rate: target 12% (current overall: 22%, but this includes sales-assisted enterprise deals; SMB baseline likely much lower)\n- Monthly self-serve signups: target 200/month by month 3\n\nLeading indicators (measured weekly from launch):\n- Signup completion rate (what % finish the reduced onboarding flow)\n- Time to first workflow action (not just login)\n- Drop-off step in the self-serve flow (where do people quit?)\n\nData gap to close: Instrument first-30-minute behavior tracking as a P0 prerequisite. Without this data, we cannot optimize the self-serve flow post-launch. This is the 2-sprint engineering investment Jamie flagged."
+        },
+        {
+            "fieldId": "proposed-solution",
+            "content": "A simplified self-serve onboarding path for SMB users that reduces the 14 configuration steps to 4 essential ones, with smart defaults for the rest.\n\nUser experience:\n1. Signup: Email + company name only. No 12-field form. Google SSO as primary option.\n2. Template selection: Instead of blank workspace setup, present 5 industry-specific workflow templates (e-commerce order processing, SaaS customer onboarding, etc.). User picks one.\n3. Guided first workflow: The selected template opens with sample data pre-populated. A contextual overlay (not a product tour) walks the user through editing one node, which teaches the core interaction model.\n4. Activation moment: User triggers the workflow with sample data and sees it execute. This is the 'aha moment' that should happen within 15 minutes.\n\nThe remaining 10 configuration steps (integrations, user permissions, compliance settings) are deferred to a 'Complete your setup' checklist that appears after activation, not before.\n\nFor the VP of Engineering's concern about core platform complexity: we are not refactoring the 14-step setup. We are creating a parallel 'quick start' path that uses smart defaults and defers advanced configuration. The core setup flow remains untouched for enterprise customers."
+        },
+        {
+            "fieldId": "prioritized-requirements",
+            "content": "P0 (Must ship in v1, 8 effective weeks):\n- Simplified signup flow (email + company name + Google SSO)\n- 3 industry workflow templates with pre-populated sample data\n- Contextual first-workflow guide (overlay, not product tour)\n- Smart defaults for the 10 deferred configuration steps\n- First-30-minute behavior tracking (prerequisite for optimization)\n- Self-serve billing integration for SMB tier\n\nP1 (Ship if time allows):\n- 2 additional workflow templates\n- In-app upgrade prompts at natural expansion points\n- Automated email sequence for users who sign up but do not activate\n\nP2 (Deferred to v2):\n- Template marketplace (community-contributed templates)\n- Self-serve to sales-assisted handoff for users who outgrow SMB tier\n- A/B testing framework for onboarding flow optimization\n\nRationale for P0 scope: The 3 templates + guided first workflow is the minimum to test whether self-serve converts. The tracking instrumentation is P0 because without data on where users drop off, we cannot iterate. Billing is P0 because we need to close the loop from trial to payment without sales involvement."
+        },
+        {
+            "fieldId": "risks-mitigations",
+            "content": "1. Technical risk: Smart defaults may break for edge-case configurations.\nMitigation: Audit the 10 deferred settings for safe defaults. Flag any that could cause data issues and require those in the quick-start path. Estimated effort: 1 week of senior engineer time.\n\n2. Business risk: Self-serve cannibalizes sales-assisted pipeline.\nMitigation: Segment by company size. Companies over 100 employees continue to see the 'Request a demo' path. Under 100 sees self-serve. Monitor enterprise lead volume weekly.\n\n3. User risk: Simplified onboarding creates false expectations about product complexity.\nMitigation: The 'Complete your setup' checklist appears immediately after activation, so users know more configuration exists. Frame it as 'unlock more features' not 'you missed required steps.'\n\n4. Quality risk: 8 effective engineering weeks is tight.\nMitigation: Cut P1 items aggressively if the infrastructure migration eats more than the planned 3 weeks. The minimum viable self-serve path is signup + 1 template + guide. That is achievable in 6 weeks.\n\n5. Data risk: We are launching without first-30-minute tracking.\nMitigation: Make tracking instrumentation the first sprint. Launch self-serve with tracking from day one, not as a retrofit."
+        },
+        {
+            "fieldId": "launch-plan",
+            "content": "Week 1-2: Tracking instrumentation + simplified signup flow\nWeek 3-5: Template engine + 3 templates + contextual guide\nWeek 6-7: Smart defaults audit + billing integration + QA\nWeek 8: Soft launch to 10% of new SMB signups (feature flag)\n\nSoft launch criteria: signup completion rate over 60%, first-workflow completion rate over 30%, no critical bugs in billing.\n\nWeek 9-10: Monitor soft launch metrics. Fix drop-off points.\nWeek 11: Full launch to all SMB signups if soft launch criteria met.\n\nStakeholder communication:\n- CEO: Weekly metrics dashboard (signups, activation, conversion) starting week 8\n- VP Engineering: Bi-weekly sync on infrastructure migration conflicts. Escalation path if migration pulls more than planned 3 weeks.\n- Sales team: Briefed before launch that SMB leads under 100 employees will no longer enter their pipeline. Provide them with self-serve metrics so they can speak to it in enterprise deals.\n- Customer Success: Trained on the new self-serve flow so they can support users who call in."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "Problem Statement",
+            "fieldIds": ["problem-statement"]
+        },
+        {
+            "id": "step-2",
+            "title": "Target Users",
+            "fieldIds": ["target-users"]
+        },
+        {
+            "id": "step-3",
+            "title": "Success Metrics",
+            "fieldIds": ["success-metrics"]
+        },
+        {
+            "id": "step-4",
+            "title": "Proposed Solution",
+            "fieldIds": ["proposed-solution"]
+        },
+        {
+            "id": "step-5",
+            "title": "Requirements",
+            "fieldIds": ["prioritized-requirements"]
+        },
+        {
+            "id": "step-6",
+            "title": "Risks",
+            "fieldIds": ["risks-mitigations"]
+        },
+        {
+            "id": "step-7",
+            "title": "Launch Plan",
+            "fieldIds": ["launch-plan"]
+        }
+    ]
+}

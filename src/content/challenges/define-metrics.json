@@ -1,0 +1,151 @@
+{
+    "slug": "define-metrics",
+    "title": "Define Metrics for a Launched Product",
+    "description": "A feature shipped 3 months ago with no success metrics. You have raw data, support tickets, and a product review meeting in 2 days. Build the metrics framework.",
+    "difficulty": "beginner",
+    "category": "analytics",
+    "version": 1,
+    "timeEstimateMinutes": 35,
+    "scenarioBrief": "You are a PM at CloudNote, a collaborative document editing tool ($8M ARR, 400 employees). Three months ago, your team shipped \"Smart Templates\", a feature that lets users create documents from AI-generated templates based on their use case (meeting notes, project briefs, retrospectives, etc.).\n\nThe feature was shipped without defined success metrics. The previous PM who owned it transferred to another team. Your VP of Product just assigned it to you and said: \"The CEO is asking whether Smart Templates is working. I have a product review with her in 2 days. I need you to figure out what 'working' means for this feature, assess how it is actually performing, and tell me what we should do next.\"\n\nYou have access to raw analytics dashboards, customer support tickets, and some user interview snippets. The data is messy, incomplete, and tells a mixed story.",
+    "contextMaterials": [
+        {
+            "id": "analytics",
+            "title": "Raw Analytics Data",
+            "type": "data",
+            "content": "Smart Templates usage (last 90 days):\n- Total template creations: 14,200\n- Unique users who created at least 1 template: 3,400 (out of 28,000 MAU = 12.1% adoption)\n- Average templates created per adopter: 4.2\n- Template creation by type: Meeting notes (41%), Project briefs (28%), Retrospectives (15%), Other (16%)\n- Day-1 retention of template users: 62% (vs 71% for non-template users)\n- Day-7 retention of template users: 48% (vs 52% for non-template users)\n- Day-30 retention of template users: 38% (vs 31% for non-template users)\n- Time to first template (from feature discovery): median 3.2 minutes\n- Template edit rate (% of templates modified after creation): 67%\n- Template share rate (% of templates shared with collaborators): 23%\n\nNote: Retention numbers compare users who adopted Smart Templates vs those who did not. Causation is not established. Template users may simply be more engaged users overall.\n\nData gap: We do not track what happens to documents created from templates after 24 hours. We know they are created and edited initially, but not whether they become ongoing living documents or are abandoned."
+        },
+        {
+            "id": "support-tickets",
+            "title": "Support Tickets (Smart Templates)",
+            "type": "data",
+            "content": "Total tickets mentioning Smart Templates: 89 (last 90 days)\n\nTop themes:\n1. \"Template does not match my use case\" (34 tickets) - Users requesting industry-specific or role-specific templates not currently available\n2. \"AI generated content is too generic\" (22 tickets) - Template text feels like placeholder, not useful as a starting point\n3. \"Cannot customize template structure\" (18 tickets) - Users want to modify the template itself, not just fill it in\n4. \"How do I find Smart Templates?\" (15 tickets) - Discovery issue, users cannot find the feature\n\nCSAT for Smart Templates tickets: 3.1/5 (vs 4.2/5 company average)"
+        },
+        {
+            "id": "interviews",
+            "title": "User Interview Snippets",
+            "type": "text",
+            "content": "User A (Product Manager at a fintech): \"I use Smart Templates every Monday for my team's weekly meeting notes. It saves me about 10 minutes of setup. The structure is good enough that I only tweak a few fields. I have stopped using my old Google Doc template entirely.\"\n\nUser B (Engineering Manager, 200-person company): \"I tried it once for a retro. The AI suggestions were so generic that I deleted everything and started from scratch. It actually cost me time instead of saving it. I have not gone back.\"\n\nUser C (Startup founder): \"I love the concept but the templates are clearly designed for larger companies. There is nothing for a 5-person startup. I need a 'product brief for a team of 3', not a 'cross-functional PRD template'.\"\n\nUser D (Marketing Director): \"I did not know this feature existed until my colleague shared a template-generated doc with me. Then I immediately started using it. The discovery is the problem, not the feature.\""
+        }
+    ],
+    "submissionFields": [
+        {
+            "id": "north-star",
+            "label": "North Star Metric",
+            "hint": "What single metric best captures whether Smart Templates is delivering value? Why this metric over alternatives?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 1500
+        },
+        {
+            "id": "supporting-metrics",
+            "label": "Supporting Metrics (Leading and Lagging)",
+            "hint": "What leading indicators predict success? What lagging indicators confirm it? Be specific about targets and timeframes.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "current-assessment",
+            "label": "Current Performance Assessment",
+            "hint": "Based on the available data, how is Smart Templates actually performing? What story does the data tell?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "recommended-actions",
+            "label": "Recommended Actions",
+            "hint": "Based on your assessment, what should the team do next? Prioritize the actions.",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 2000
+        },
+        {
+            "id": "data-gaps",
+            "label": "What Data Is Missing",
+            "hint": "What do you wish you knew? What instrumentation would you add? How would it change your recommendations?",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 1500
+        }
+    ],
+    "rubric": [
+        {
+            "id": "metric-quality",
+            "name": "Metric Quality",
+            "description": "Are the chosen metrics meaningful, actionable, and specific?",
+            "criteria": "Score 8-10: North star metric directly ties to user value (not vanity). Supporting metrics include specific targets with timeframes. Metrics are actionable (team can influence them). Score 5-7: Metrics are reasonable but may include vanity metrics or lack targets. Score 1-4: Metrics are vague ('increase engagement') or measure output not outcome.",
+            "weight": 1
+        },
+        {
+            "id": "leading-lagging",
+            "name": "Leading vs Lagging Balance",
+            "description": "Does the framework include both predictive and confirmatory signals?",
+            "criteria": "Score 8-10: Clear distinction between leading indicators (template creation rate, time-to-first-template) and lagging indicators (retention impact, document longevity). Explains why each matters. Score 5-7: Has both types but the relationship between them is not well articulated. Score 1-4: Only measures lagging indicators or does not distinguish between types.",
+            "weight": 1
+        },
+        {
+            "id": "actionability",
+            "name": "Actionability",
+            "description": "Do the recommendations follow logically from the data assessment?",
+            "criteria": "Score 8-10: Each recommendation ties directly to a data point or insight. Actions are prioritized. Acknowledges what the data cannot tell you. Score 5-7: Recommendations are reasonable but may not be well connected to the data. Score 1-4: Recommendations are generic or disconnected from the assessment.",
+            "weight": 1
+        },
+        {
+            "id": "intellectual-honesty",
+            "name": "Intellectual Honesty",
+            "description": "Does the assessment acknowledge limitations, mixed signals, and uncertainty?",
+            "criteria": "Score 8-10: Explicitly flags the correlation vs causation issue in retention data. Acknowledges where data is insufficient for conclusions. Does not cherry-pick positive signals. Proposes how to resolve ambiguity. Score 5-7: Some acknowledgment of limitations but may overstate conclusions. Score 1-4: Presents a one-sided narrative or ignores contradictory data.",
+            "weight": 1
+        }
+    ],
+    "expertSolution": [
+        {
+            "fieldId": "north-star",
+            "content": "North Star: Weekly Active Template Users who edit their template-generated document at least once after creation.\n\nWhy this metric: Raw template creations (14,200) is a vanity metric. It tells you people clicked a button, not that they got value. The edit rate (67%) is closer to value, but a single edit could just be deleting the AI-generated placeholder text.\n\nThe real signal is repeated engagement: did the template-generated document become a living artifact the user actually works in? That is the promise of Smart Templates: not just creation, but accelerated ongoing work.\n\nWhy weekly, not monthly: Templates are used for recurring workflows (weekly meetings, sprint retros). If someone uses it once and never returns, it did not stick. Weekly cadence captures the habit loop.\n\nAlternative considered: \"Time saved per template creation\" would be ideal but we cannot measure it without baseline data on how long the same document took to create before templates."
+        },
+        {
+            "fieldId": "supporting-metrics",
+            "content": "Leading indicators (predict future north star performance):\n- Template discovery rate: % of MAU who encounter the Smart Templates feature. Current: unknown (15 support tickets about discoverability suggest this is a bottleneck). Target: 60% of MAU within 90 days.\n- Time to first template: median 3.2 minutes is good. Target: keep under 5 minutes as we add more template types.\n- Template edit depth: ratio of meaningful edits (changing more than 20% of template content) vs light edits. Currently at 67% edit rate but we do not know edit depth. This distinguishes \"useful starting point\" from \"delete and start over.\"\n\nLagging indicators (confirm long-term value):\n- 30-day retention delta: template adopters vs non-adopters. Current: +7 percentage points (38% vs 31%). Target: maintain or increase this gap. Caveat: need to control for user engagement level to isolate template impact.\n- Template-originated document lifespan: % of template documents still being edited after 7 days. Currently not tracked. Target: establish a baseline within 30 days.\n- Support ticket volume per template user: trending metric. Currently 89 tickets / 3,400 adopters = 2.6%. Target: reduce to under 1.5% within 60 days."
+        },
+        {
+            "fieldId": "current-assessment",
+            "content": "Smart Templates is showing early promise with significant quality issues that limit its potential.\n\nThe positive signals:\n- 12.1% adoption in 90 days without active promotion is decent for a non-core feature. User D's comment (\"I didn't know this existed\") suggests organic discovery alone is driving this.\n- 4.2 templates per adopter suggests people who try it come back. This is not a one-and-done feature.\n- The 30-day retention uplift (+7 points) is the strongest signal, though we cannot prove causation. Template users may be inherently more engaged, but the gap is worth investigating.\n- Meeting notes at 41% of usage shows a clear winner use case.\n\nThe concerning signals:\n- 67% edit rate combined with User B's experience suggests a bimodal distribution: some templates are genuinely useful (User A's weekly meeting notes), while others are so generic that users delete and restart (User B's retro experience).\n- 23% share rate is low for a collaborative tool. Templates should accelerate team workflows, not just individual ones.\n- CSAT of 3.1 vs 4.2 company average is a red flag. Users who need help with templates are noticeably less satisfied.\n- The discovery problem (15 tickets, User D's story) means we are leaving adoption on the table.\n\nThe honest summary for the CEO: \"Smart Templates has found product-market fit with a specific use case (recurring meeting notes for experienced users) but is underperforming for everything else. The AI content quality and template discoverability are both holding it back from reaching its potential.\""
+        },
+        {
+            "fieldId": "recommended-actions",
+            "content": "Priority 1 (this week): Fix the discovery problem.\n- Add Smart Templates entry point to the new document creation flow. Currently users have to find it themselves. This is the lowest-effort, highest-impact change because it unblocks the 88% of MAU who have not discovered the feature.\n- Estimated impact: could double adoption from 12% to 24% based on User D's experience.\n\nPriority 2 (next 2 weeks): Improve template quality for the top 3 use cases.\n- Meeting notes templates are working (41% of usage, User A loves them). Double down on this: add role-specific variants (engineering standup, sales pipeline review, executive all-hands).\n- Retro and project brief templates need significant quality improvement. User B and C's feedback suggests the AI content is too generic. Work with the AI team to fine-tune prompts with real examples.\n- Do not add new template categories until existing ones are strong.\n\nPriority 3 (next 30 days): Instrument the data gaps.\n- Track document lifespan after template creation (see data gaps section). Without this, we cannot answer the CEO's question about whether templates are truly working.\n- Add an optional 1-question in-app survey after first template use: \"Did this template save you time?\" Binary yes/no with optional free text.\n\nPriority 4 (next quarter): Address template customization.\n- 18 support tickets about customization suggest power users want to create and save their own templates. This could be the expansion path that turns Smart Templates from a feature into a platform."
+        },
+        {
+            "fieldId": "data-gaps",
+            "content": "Critical gap: Document lifespan after template creation.\nWe know 67% of templates are edited, but we do not know what happens after that. Are these living documents that are used for weeks, or are they abandoned after the initial session? This is the single most important data point for determining whether Smart Templates delivers lasting value.\nInstrumentation: track last-edit timestamp on template-generated documents. Report on 7-day and 30-day active document rates.\n\nImportant gap: Causal impact on retention.\nThe +7 point retention uplift could be selection bias (more engaged users adopt templates). Without a controlled experiment or at minimum a propensity-score matching analysis, we cannot claim templates cause better retention.\nRecommendation: Run an A/B test where new users are shown templates prominently (treatment) vs current state (control). Measure 30-day retention.\n\nUseful gap: Per-template-type quality metrics.\nWe know overall edit rate is 67%, but we do not know if meeting notes templates have 90% edit rate while retro templates have 30%. This would focus our quality improvement efforts.\nInstrumentation: break down edit rate, share rate, and document lifespan by template type.\n\nNice-to-have gap: Time saved per template.\nThe core value proposition is saving time. We would need to compare document creation time with vs without templates for the same document type. Complex to instrument but would provide the strongest ROI story for the CEO."
+        }
+    ],
+    "steps": [
+        {
+            "id": "step-1",
+            "title": "North Star",
+            "fieldIds": ["north-star"]
+        },
+        {
+            "id": "step-2",
+            "title": "Supporting Metrics",
+            "fieldIds": ["supporting-metrics"]
+        },
+        {
+            "id": "step-3",
+            "title": "Assessment",
+            "fieldIds": ["current-assessment"]
+        },
+        {
+            "id": "step-4",
+            "title": "Actions",
+            "fieldIds": ["recommended-actions"]
+        },
+        {
+            "id": "step-5",
+            "title": "Data Gaps",
+            "fieldIds": ["data-gaps"]
+        }
+    ]
+}
