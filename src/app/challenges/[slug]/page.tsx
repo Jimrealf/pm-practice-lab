@@ -3,8 +3,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { createClient } from "@/lib/supabase/server";
-import type { Challenge } from "@/types/challenge";
+import { getChallengeBySlug } from "@/lib/supabase/queries";
 
 export default async function ChallengeDetailPage({
     params,
@@ -12,13 +11,7 @@ export default async function ChallengeDetailPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const supabase = await createClient();
-
-    const { data: challenge } = await supabase
-        .from("challenges")
-        .select("*")
-        .eq("slug", slug)
-        .single<Challenge>();
+    const challenge = await getChallengeBySlug(slug);
 
     if (!challenge) {
         notFound();

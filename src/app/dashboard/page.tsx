@@ -3,7 +3,9 @@ import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { createClient } from "@/lib/supabase/server";
+import { getChallenges } from "@/lib/supabase/queries";
 import { toSentenceCase } from "@/lib/format";
+import { DashboardInterviewProgress } from "./DashboardInterviewProgress";
 
 interface SubmissionRow {
     id: string;
@@ -47,11 +49,14 @@ export default async function DashboardPage() {
         redirect("/auth/login?redirect=/dashboard");
     }
 
-    const { data: challenges } = await supabase
-        .from("challenges")
-        .select("id, slug, title, difficulty, category")
-        .order("difficulty")
-        .returns<ChallengeRow[]>();
+    const cachedChallenges = await getChallenges();
+    const challenges: ChallengeRow[] = (cachedChallenges ?? []).map((c) => ({
+        id: (c as unknown as { id: string }).id,
+        slug: c.slug,
+        title: c.title,
+        difficulty: c.difficulty,
+        category: c.category,
+    }));
 
     const { data: submissions } = await supabase
         .from("submissions")
@@ -133,6 +138,8 @@ export default async function DashboardPage() {
                     </p>
                 </Card>
             </div>
+
+            <DashboardInterviewProgress />
 
             {totalSubmissions === 0 ? (
                 <Card className="mt-10 p-10 text-center">

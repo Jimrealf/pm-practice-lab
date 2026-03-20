@@ -2,17 +2,10 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { createClient } from "@/lib/supabase/server";
-import type { Challenge } from "@/types/challenge";
+import { getFeaturedChallenges } from "@/lib/supabase/queries";
 
 export default async function HomePage() {
-    const supabase = await createClient();
-    const { data: featured } = await supabase
-        .from("challenges")
-        .select("slug, title, description, difficulty, category, time_estimate_minutes")
-        .in("slug", ["write-a-prd", "prioritize-backlog", "define-metrics"])
-        .order("difficulty")
-        .returns<Challenge[]>();
+    const featured = await getFeaturedChallenges();
 
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-12">

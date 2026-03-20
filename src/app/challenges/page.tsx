@@ -1,16 +1,10 @@
-import { createClient } from "@/lib/supabase/server";
-import type { Challenge } from "@/types/challenge";
+import { getChallenges } from "@/lib/supabase/queries";
 import { ChallengeListClient } from "./ChallengeListClient";
 
 export default async function ChallengesPage() {
-    const supabase = await createClient();
-    const { data: challenges, error } = await supabase
-        .from("challenges")
-        .select("slug, title, description, difficulty, category, time_estimate_minutes, created_at")
-        .order("created_at", { ascending: false })
-        .returns<(Challenge & { created_at: string })[]>();
+    const challenges = await getChallenges();
 
-    if (error) {
+    if (!challenges) {
         return (
             <div className="max-w-[1200px] mx-auto px-6 py-12">
                 <p className="text-text-secondary">
@@ -20,5 +14,5 @@ export default async function ChallengesPage() {
         );
     }
 
-    return <ChallengeListClient challenges={challenges ?? []} />;
+    return <ChallengeListClient challenges={challenges} />;
 }
