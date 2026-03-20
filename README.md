@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PM Practice Lab
+
+Interactive challenge platform where aspiring Product Managers practice real PM work and get structured AI feedback.
+
+Live: https://pm-practice-lab-6i6v.vercel.app
+
+## Features
+
+**Challenges** -- Structured PM exercises (PRDs, prioritization, metrics) with scenario briefs, context materials, and multi-step submission forms. AI-powered review via Google Gemini scores each submission on multiple dimensions with growth-framed feedback.
+
+**Interview Prep** -- Flashcards, multiple-choice quizzes, and a searchable question bank across 5 PM interview categories (Product Design, Analytical, Behavioral, Strategy, Technical). Progress tracked locally.
+
+**Dashboard** -- Tracks challenge submissions, review scores, and interview prep progress in one place.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Database:** Supabase (PostgreSQL + Auth + Realtime)
+- **AI Review:** Google Gemini API (structured JSON output)
+- **Styling:** Tailwind CSS with custom design tokens (see DESIGN.md)
+- **Testing:** Vitest (293 tests) + React Testing Library
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local  # Add your Supabase + Gemini keys
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (server only) |
+| `GEMINI_API_KEY` | Google Gemini API key |
 
-## Learn More
+### Seed Challenges
 
-To learn more about Next.js, take a look at the following resources:
+With the dev server running:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+curl -X POST http://localhost:3000/api/seed
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+  app/                  # Next.js App Router pages
+    challenges/         # Challenge list, detail, submit, review
+    dashboard/          # User progress dashboard
+    interviews/         # Flashcards, quiz, question bank
+    auth/               # Login, OAuth callback
+    api/                # Route handlers (submit, review, seed)
+  components/
+    ui/                 # Reusable primitives (Button, Card, Input, Badge, Skeleton)
+    nav/                # TopNav, MobileBottomNav
+    theme/              # ThemeProvider, ThemeToggle
+  features/
+    submit/             # WizardForm, AutoSave, MaterialsPanel
+    interviews/         # Flashcard/quiz hooks
+  lib/
+    supabase/           # Client, server, admin, cached queries
+    gemini/             # AI review client, prompt builder, schema
+    interviews/         # Question content, localStorage storage
+  types/                # TypeScript interfaces
+  content/
+    challenges/         # Challenge JSON configs
+    interviews/         # Interview question JSON
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm test              # Run all 293 tests
+npm run test:watch    # Watch mode
+```
+
+## Documentation
+
+- [DESIGN.md](./DESIGN.md) -- Design system tokens, colors, typography, spacing
+- [CLAUDE.md](./CLAUDE.md) -- AI agent instructions and project conventions
+- [TODOS.md](./TODOS.md) -- Deferred work items
