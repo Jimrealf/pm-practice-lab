@@ -17,7 +17,7 @@ Live: https://pm-practice-lab-6i6v.vercel.app
 - **Framework:** Next.js 16 (App Router, Turbopack)
 - **Database:** Supabase (PostgreSQL + Auth + Realtime)
 - **AI Review:** Google Gemini API (structured JSON output)
-- **Styling:** Tailwind CSS with custom design tokens (see DESIGN.md)
+- **Styling:** Tailwind CSS with custom design tokens
 - **Testing:** Vitest (293 tests) + React Testing Library
 
 ## Getting Started
@@ -81,8 +81,3 @@ npm test              # Run all 293 tests
 npm run test:watch    # Watch mode
 ```
 
-## Documentation
-
-- [DESIGN.md](./DESIGN.md) -- Design system tokens, colors, typography, spacing
-- [CLAUDE.md](./CLAUDE.md) -- AI agent instructions and project conventions
-- [TODOS.md](./TODOS.md) -- Deferred work items
