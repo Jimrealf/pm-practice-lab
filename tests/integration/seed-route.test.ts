@@ -77,17 +77,31 @@ describe("POST /api/seed", () => {
         process.env.NODE_ENV = originalNodeEnv;
     });
 
-    it("returns 403 FORBIDDEN in production", async () => {
+    it("returns 403 FORBIDDEN in production without valid key", async () => {
         process.env.NODE_ENV = "production";
+        process.env.SEED_SECRET = "test-secret";
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(403);
         expect(json.code).toBe("FORBIDDEN");
         expect(json.success).toBe(false);
-        expect(json.error).toBe("Seed disabled in production");
+    });
+
+    it("allows production seed with valid key", async () => {
+        process.env.NODE_ENV = "production";
+        process.env.SEED_SECRET = "test-secret";
+
+        mockReaddirSync.mockReturnValue([]);
+
+        const { POST } = await import("@/app/api/seed/route");
+        const res = await POST(new Request("http://localhost/api/seed?key=test-secret"));
+        const json = await res.json();
+
+        expect(res.status).toBe(200);
+        expect(json.success).toBe(true);
     });
 
     it("loads challenges from JSON files and upserts them", async () => {
@@ -110,7 +124,7 @@ describe("POST /api/seed", () => {
         );
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(200);
@@ -139,7 +153,7 @@ describe("POST /api/seed", () => {
         });
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(200);
@@ -179,7 +193,7 @@ describe("POST /api/seed", () => {
         });
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(500);
@@ -194,7 +208,7 @@ describe("POST /api/seed", () => {
         mockReaddirSync.mockReturnValue([]);
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(200);
@@ -206,7 +220,7 @@ describe("POST /api/seed", () => {
         mockReaddirSync.mockReturnValue(["README.md", "notes.txt", ".gitkeep"]);
 
         const { POST } = await import("@/app/api/seed/route");
-        const res = await POST();
+        const res = await POST(new Request("http://localhost/api/seed"));
         const json = await res.json();
 
         expect(res.status).toBe(200);

@@ -91,6 +91,17 @@ export function WizardForm({
         };
     }, []);
 
+    useEffect(() => {
+        function handleBeforeUnload(e: BeforeUnloadEvent) {
+            const hasContent = Object.values(values).some((v) => v.trim().length > 0);
+            if (hasContent) {
+                e.preventDefault();
+            }
+        }
+        window.addEventListener("beforeunload", handleBeforeUnload);
+        return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+    }, [values]);
+
     function validateCurrentStep(): boolean {
         const stepErrors: Record<string, string> = {};
         for (const field of fields) {
@@ -197,18 +208,13 @@ export function WizardForm({
                                 maxLength={field.maxLength}
                                 error={errors[field.id]}
                             />
-                            <div className="flex items-center justify-between mt-1">
-                                {errors[field.id] && (
-                                    <span className="text-[12px] text-feedback-growth">
-                                        {errors[field.id]}
-                                    </span>
-                                )}
-                                {field.maxLength && (
-                                    <span className="text-[12px] text-text-tertiary ml-auto">
+                            {field.maxLength && (
+                                <div className="flex justify-end mt-1">
+                                    <span className="text-[12px] text-text-tertiary">
                                         {values[field.id]?.length ?? 0} / {field.maxLength}
                                     </span>
-                                )}
-                            </div>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

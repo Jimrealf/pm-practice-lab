@@ -207,13 +207,14 @@ export default async function DashboardPage() {
                                         >
                                             <span className="text-[13px] text-text-secondary">
                                                 {new Date(sub.createdAt).toLocaleDateString("en-US", {
+                                                    year: "numeric",
                                                     month: "short",
                                                     day: "numeric",
                                                     hour: "numeric",
                                                     minute: "2-digit",
                                                 })}
                                             </span>
-                                            <span className="text-[13px] font-medium">
+                                            <span className="flex items-center gap-2 text-[13px] font-medium">
                                                 {sub.status === "reviewed" && sub.score !== null ? (
                                                     <span className="text-accent">{sub.score}/10</span>
                                                 ) : (
@@ -221,6 +222,9 @@ export default async function DashboardPage() {
                                                         {toSentenceCase(sub.status)}
                                                     </span>
                                                 )}
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-tertiary">
+                                                    <polyline points="9 18 15 12 9 6" />
+                                                </svg>
                                             </span>
                                         </Link>
                                     ))}

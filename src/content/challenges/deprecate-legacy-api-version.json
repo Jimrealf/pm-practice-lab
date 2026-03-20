@@ -1,7 +1,7 @@
 {
     "slug": "deprecate-legacy-api-version",
-    "title": "Deprecate legacy api version",
-    "description": "Real-world PM scenario on deprecate legacy API version with conflicting stakeholder incentives and incomplete data.",
+    "title": "Deprecate legacy API version",
+    "description": "Your v1 API still has 340 active integrations. Plan the deprecation so you can sunset it without breaking customers.",
     "difficulty": "beginner",
     "category": "execution",
     "version": 1,

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { WizardForm } from "@/features/submit/WizardForm";
@@ -42,6 +43,21 @@ export default async function SubmitPage({
 
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-8">
+            <div className="flex items-center gap-4 mb-6">
+                <Link
+                    href={`/challenges/${slug}`}
+                    className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+                >
+                    Back to challenge
+                </Link>
+                <span className="text-text-tertiary">|</span>
+                <Link
+                    href="/challenges"
+                    className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+                >
+                    All challenges
+                </Link>
+            </div>
             <div className="mb-6">
                 <h1 className="font-display font-bold text-[24px] text-text-primary">
                     {challenge.title}

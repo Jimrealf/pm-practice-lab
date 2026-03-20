@@ -313,6 +313,15 @@ export function ReviewClient() {
                     {review.comparison_to_expert}
                 </p>
             </Card>
+
+            <div className="mt-10 flex items-center justify-center gap-4">
+                <Link href={`/challenges/${slug}/submit`}>
+                    <Button>Try again</Button>
+                </Link>
+                <Link href="/challenges">
+                    <Button variant="ghost">Browse challenges</Button>
+                </Link>
+            </div>
         </div>
     );
 }

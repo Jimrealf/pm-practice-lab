@@ -1,7 +1,7 @@
 {
     "slug": "pricing-rollback-after-churn-spike",
     "title": "Pricing rollback after churn spike",
-    "description": "Real-world PM scenario on pricing rollback after churn spike with conflicting stakeholder incentives and incomplete data.",
+    "description": "A pricing change caused a 15% churn spike in one segment. Decide whether to roll back, adjust, or hold firm, and write the customer comms.",
     "difficulty": "advanced",
     "category": "communication",
     "version": 1,

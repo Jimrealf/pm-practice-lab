@@ -10,7 +10,7 @@ export default function FlashcardsPage() {
     const questions = getAllQuestions();
 
     return (
-        <Suspense>
+        <Suspense fallback={<div className="max-w-[680px] mx-auto px-6 py-8" />}>
             <FlashcardClient questions={questions} />
         </Suspense>
     );

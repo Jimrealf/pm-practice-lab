@@ -1,7 +1,7 @@
 {
     "slug": "plg-vs-sales-led-motion-decision",
-    "title": "Plg vs sales-led motion decision",
-    "description": "Real-world PM scenario on PLG vs sales-led motion decision with conflicting stakeholder incentives and incomplete data.",
+    "title": "PLG vs sales-led motion decision",
+    "description": "Your B2B SaaS has both self-serve signups and an outbound sales team. Decide where to invest: double down on PLG, shift to sales-led, or run both.",
     "difficulty": "advanced",
     "category": "strategy",
     "version": 1,

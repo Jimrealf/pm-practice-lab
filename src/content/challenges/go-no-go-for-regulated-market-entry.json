@@ -1,7 +1,7 @@
 {
     "slug": "go-no-go-for-regulated-market-entry",
     "title": "Go/no-go for regulated market entry",
-    "description": "Real-world PM scenario on go/no-go for regulated market entry with conflicting stakeholder incentives and incomplete data.",
+    "description": "Your healthtech platform wants to enter a new regulated market. Make the go/no-go recommendation with compliance, cost, and timeline trade-offs.",
     "difficulty": "intermediate",
     "category": "strategy",
     "version": 1,

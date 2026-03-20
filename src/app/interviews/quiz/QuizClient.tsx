@@ -6,6 +6,7 @@ import type { InterviewQuestion, InterviewCategory } from "@/types/interview";
 import { INTERVIEW_CATEGORIES, CATEGORY_LABELS } from "@/types/interview";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { useQuizSession } from "@/features/interviews/useQuizSession";
 import { getProgress } from "@/lib/interviews/storage";
 
@@ -232,6 +233,7 @@ function QuizActive({
     onQuit: () => void;
 }) {
     const nextRef = useRef<HTMLButtonElement>(null);
+    const [showQuitConfirm, setShowQuitConfirm] = useState(false);
 
     useEffect(() => {
         if (showFeedback) {
@@ -247,7 +249,7 @@ function QuizActive({
             <div className="mb-4">
                 <button
                     type="button"
-                    onClick={onQuit}
+                    onClick={() => setShowQuitConfirm(true)}
                     className="text-[13px] text-text-secondary hover:text-accent transition-colors mb-4"
                 >
                     End quiz
@@ -340,6 +342,15 @@ function QuizActive({
                     </Button>
                 </div>
             )}
+            <ConfirmDialog
+                open={showQuitConfirm}
+                title="End quiz"
+                description="Are you sure? Your progress on this quiz will be lost."
+                confirmLabel="End quiz"
+                cancelLabel="Keep going"
+                onConfirm={onQuit}
+                onCancel={() => setShowQuitConfirm(false)}
+            />
         </div>
     );
 }

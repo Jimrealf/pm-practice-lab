@@ -1,7 +1,7 @@
 {
     "slug": "instrumentation-plan-for-new-checkout",
     "title": "Instrumentation plan for new checkout",
-    "description": "Real-world PM scenario on instrumentation plan for new checkout with conflicting stakeholder incentives and incomplete data.",
+    "description": "A new checkout flow launches next month with zero analytics. Build the instrumentation plan so you can measure what matters from day one.",
     "difficulty": "intermediate",
     "category": "analytics",
     "version": 1,

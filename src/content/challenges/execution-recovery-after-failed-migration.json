@@ -1,7 +1,7 @@
 {
     "slug": "execution-recovery-after-failed-migration",
     "title": "Execution recovery after failed migration",
-    "description": "Real-world PM scenario on execution recovery after failed migration with conflicting stakeholder incentives and incomplete data.",
+    "description": "A major data migration failed midway through. 40% of customers are on the new system, 60% on the old. Build the recovery plan.",
     "difficulty": "intermediate",
     "category": "execution",
     "version": 1,

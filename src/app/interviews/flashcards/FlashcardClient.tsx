@@ -237,15 +237,15 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
                 <div className="flex items-center gap-4 text-[12px] text-text-tertiary">
                     <span className="flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green" />
-                        {counts.known}
+                        {counts.known} known
                     </span>
                     <span className="flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber" />
-                        {counts.notYet}
+                        {counts.notYet} not yet
                     </span>
                     <span className="flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-text-tertiary" />
-                        {counts.skipped}
+                        {counts.skipped} skipped
                     </span>
                 </div>
             </div>

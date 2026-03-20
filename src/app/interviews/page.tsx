@@ -72,7 +72,7 @@ export default function InterviewsPage() {
                     </div>
                     <InterviewLandingStats mode="quiz" />
                     <p className="mt-3 text-[12px] text-text-tertiary">
-                        {quizQuestions.length} quiz questions
+                        {quizQuestions.length} of {allQuestions.length} questions have multiple-choice options
                     </p>
                 </Link>
 

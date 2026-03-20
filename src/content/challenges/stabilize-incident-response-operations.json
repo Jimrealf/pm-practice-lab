@@ -1,7 +1,7 @@
 {
     "slug": "stabilize-incident-response-operations",
     "title": "Stabilize incident response operations",
-    "description": "Real-world PM scenario on stabilize incident response operations with conflicting stakeholder incentives and incomplete data.",
+    "description": "Your team averaged 4 incidents per week last month with no consistent response process. Design the incident response operations that bring stability.",
     "difficulty": "advanced",
     "category": "execution",
     "version": 1,

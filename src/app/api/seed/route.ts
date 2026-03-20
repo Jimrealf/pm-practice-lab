@@ -31,12 +31,16 @@ function loadChallenges(): ChallengeConfig[] {
     });
 }
 
-export async function POST() {
+export async function POST(request: Request) {
     if (process.env.NODE_ENV === "production") {
-        return NextResponse.json(
-            { success: false, error: "Seed disabled in production", code: "FORBIDDEN" },
-            { status: 403 }
-        );
+        const { searchParams } = new URL(request.url);
+        const key = searchParams.get("key");
+        if (!key || key !== process.env.SEED_SECRET) {
+            return NextResponse.json(
+                { success: false, error: "Seed requires valid key in production", code: "FORBIDDEN" },
+                { status: 403 }
+            );
+        }
     }
 
     const challenges = loadChallenges();

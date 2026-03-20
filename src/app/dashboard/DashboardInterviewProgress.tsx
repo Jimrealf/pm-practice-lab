@@ -42,13 +42,13 @@ export function DashboardInterviewProgress() {
                     <div className="mt-4 flex items-center justify-center gap-3">
                         <Link
                             href="/interviews/flashcards"
-                            className="inline-flex items-center justify-center px-4 py-2 text-[13px] font-medium border border-accent text-accent rounded-[var(--radius-md)] hover:bg-accent-light transition-colors"
+                            className="inline-flex items-center justify-center px-4 py-2 text-[13px] font-medium border border-border text-text-secondary rounded-[var(--radius-md)] hover:border-accent hover:text-accent transition-colors"
                         >
                             Flashcards
                         </Link>
                         <Link
                             href="/interviews/quiz"
-                            className="inline-flex items-center justify-center px-4 py-2 text-[13px] font-medium bg-accent text-white rounded-[var(--radius-md)] hover:bg-accent-dark transition-colors"
+                            className="inline-flex items-center justify-center px-4 py-2 text-[13px] font-medium border border-border text-text-secondary rounded-[var(--radius-md)] hover:border-accent hover:text-accent transition-colors"
                         >
                             Start a quiz
                         </Link>

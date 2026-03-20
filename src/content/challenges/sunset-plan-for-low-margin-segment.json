@@ -1,7 +1,7 @@
 {
     "slug": "sunset-plan-for-low-margin-segment",
     "title": "Sunset plan for low-margin segment",
-    "description": "Real-world PM scenario on sunset plan for low-margin segment with conflicting stakeholder incentives and incomplete data.",
+    "description": "One customer segment generates 8% of revenue at negative margin. Build the sunset plan that exits gracefully without PR damage.",
     "difficulty": "advanced",
     "category": "strategy",
     "version": 1,

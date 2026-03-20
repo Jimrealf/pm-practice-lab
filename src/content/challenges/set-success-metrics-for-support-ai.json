@@ -1,7 +1,7 @@
 {
     "slug": "set-success-metrics-for-support-ai",
-    "title": "Set success metrics for support ai",
-    "description": "Real-world PM scenario on set success metrics for support AI with conflicting stakeholder incentives and incomplete data.",
+    "title": "Set success metrics for support AI",
+    "description": "Your AI support agent handles 35% of tickets but customer satisfaction data is mixed. Define success metrics that separate real value from cost-shifting.",
     "difficulty": "advanced",
     "category": "analytics",
     "version": 1,

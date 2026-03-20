@@ -1,7 +1,7 @@
 {
     "slug": "feature-sunset-decision",
     "title": "Feature sunset decision",
-    "description": "Real-world PM scenario on feature sunset decision with conflicting stakeholder incentives and incomplete data.",
+    "description": "A feature used by 12% of users drives 30% of support tickets. Decide whether to sunset, redesign, or keep it.",
     "difficulty": "intermediate",
     "category": "strategy",
     "version": 1,

@@ -1,7 +1,7 @@
 {
     "slug": "release-train-recovery-after-slippage",
     "title": "Release train recovery after slippage",
-    "description": "Real-world PM scenario on release train recovery after slippage with conflicting stakeholder incentives and incomplete data.",
+    "description": "Your release train slipped two sprints and the next major release is at risk. Build the recovery plan that gets the train back on schedule.",
     "difficulty": "advanced",
     "category": "execution",
     "version": 1,

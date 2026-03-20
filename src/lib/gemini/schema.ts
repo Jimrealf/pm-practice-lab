@@ -1,3 +1,5 @@
+import { type Schema, SchemaType } from "@google/generative-ai";
+
 interface GeminiDimensionScore {
     dimensionId: string;
     dimensionName: string;
@@ -13,39 +15,48 @@ interface GeminiReviewResponse {
     comparisonToExpert: string;
 }
 
-export const reviewJsonSchema = `{
-  "type": "object",
-  "properties": {
-    "overallScore": {
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 10,
-      "description": "Overall score from 1 to 10"
-    },
-    "dimensions": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "dimensionId": { "type": "string" },
-          "dimensionName": { "type": "string" },
-          "score": { "type": "integer", "minimum": 1, "maximum": 10 },
-          "feedback": { "type": "string", "description": "What the submission did well or poorly on this dimension" },
-          "suggestion": { "type": "string", "description": "Specific, actionable suggestion for improvement" }
+export const reviewResponseSchema: Schema = {
+    type: SchemaType.OBJECT,
+    properties: {
+        overallScore: {
+            type: SchemaType.INTEGER,
+            description: "Overall score from 1 to 10",
         },
-        "required": ["dimensionId", "dimensionName", "score", "feedback", "suggestion"]
-      }
+        dimensions: {
+            type: SchemaType.ARRAY,
+            items: {
+                type: SchemaType.OBJECT,
+                properties: {
+                    dimensionId: { type: SchemaType.STRING },
+                    dimensionName: { type: SchemaType.STRING },
+                    score: {
+                        type: SchemaType.INTEGER,
+                        description: "Score from 1 to 10",
+                    },
+                    feedback: {
+                        type: SchemaType.STRING,
+                        description: "What the submission did well or poorly on this dimension",
+                    },
+                    suggestion: {
+                        type: SchemaType.STRING,
+                        description: "Specific, actionable suggestion for improvement",
+                    },
+                },
+                required: ["dimensionId", "dimensionName", "score", "feedback", "suggestion"],
+            },
+        },
+        summary: {
+            type: SchemaType.STRING,
+            description: "2-3 sentence overall assessment using growth framing",
+        },
+        comparisonToExpert: {
+            type: SchemaType.STRING,
+            description: "How this submission compares to the expert solution, highlighting key gaps and strengths",
+        },
     },
-    "summary": {
-      "type": "string",
-      "description": "2-3 sentence overall assessment using growth framing"
-    },
-    "comparisonToExpert": {
-      "type": "string",
-      "description": "How this submission compares to the expert solution, highlighting key gaps and strengths"
-    }
-  },
-  "required": ["overallScore", "dimensions", "summary", "comparisonToExpert"]
-}`;
+    required: ["overallScore", "dimensions", "summary", "comparisonToExpert"],
+};
+
+export const reviewJsonSchema = JSON.stringify(reviewResponseSchema, null, 2);
 
 export type { GeminiDimensionScore, GeminiReviewResponse };

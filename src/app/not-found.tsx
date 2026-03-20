@@ -10,9 +10,12 @@ export default function NotFound() {
             <p className="mt-2 text-[15px] text-text-secondary">
                 This page does not exist.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex items-center justify-center gap-3">
                 <Link href="/challenges">
                     <Button>Browse challenges</Button>
+                </Link>
+                <Link href="/dashboard">
+                    <Button variant="ghost">Go to dashboard</Button>
                 </Link>
             </div>
         </div>

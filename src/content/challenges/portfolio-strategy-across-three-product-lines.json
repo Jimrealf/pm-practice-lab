@@ -1,7 +1,7 @@
 {
     "slug": "portfolio-strategy-across-three-product-lines",
     "title": "Portfolio strategy across three product lines",
-    "description": "Real-world PM scenario on portfolio strategy across three product lines with conflicting stakeholder incentives and incomplete data.",
+    "description": "Three product lines compete for the same eng resources. One is growing, one is flat, one is declining. Set the portfolio strategy.",
     "difficulty": "advanced",
     "category": "strategy",
     "version": 1,

@@ -1,7 +1,7 @@
 {
     "slug": "data-quality-audit-before-board-review",
     "title": "Data quality audit before board review",
-    "description": "Real-world PM scenario on data quality audit before board review with conflicting stakeholder incentives and incomplete data.",
+    "description": "The board meeting is in 48 hours and your data team flagged inconsistencies in the metrics deck. Audit the data and decide what to present.",
     "difficulty": "beginner",
     "category": "analytics",
     "version": 1,

@@ -1,7 +1,7 @@
 {
     "slug": "dependency-management-across-three-squads",
     "title": "Dependency management across three squads",
-    "description": "Real-world PM scenario on dependency management across three squads with conflicting stakeholder incentives and incomplete data.",
+    "description": "Three squads share a critical dependency that keeps slipping. Create the coordination plan that unblocks everyone.",
     "difficulty": "beginner",
     "category": "execution",
     "version": 1,
