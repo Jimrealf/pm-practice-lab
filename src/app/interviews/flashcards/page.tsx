@@ -1,12 +1,17 @@
+import { Suspense } from "react";
 import { getAllQuestions } from "@/lib/interviews/content";
 import { FlashcardClient } from "./FlashcardClient";
 
 export const metadata = {
-    title: "Flashcards | Interview Prep | PM Practice Lab",
+    title: "Flashcards - Interview Prep",
 };
 
 export default function FlashcardsPage() {
     const questions = getAllQuestions();
 
-    return <FlashcardClient questions={questions} />;
+    return (
+        <Suspense>
+            <FlashcardClient questions={questions} />
+        </Suspense>
+    );
 }

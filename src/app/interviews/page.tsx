@@ -5,7 +5,7 @@ import { CATEGORY_LABELS, INTERVIEW_CATEGORIES } from "@/types/interview";
 import { InterviewLandingStats } from "./InterviewLandingStats";
 
 export const metadata = {
-    title: "Interview Prep | PM Practice Lab",
+    title: "Interview Prep",
     description: "Practice PM interview questions with flashcards, quizzes, and a searchable question bank.",
 };
 

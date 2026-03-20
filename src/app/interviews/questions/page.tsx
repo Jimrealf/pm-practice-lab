@@ -2,7 +2,7 @@ import { getAllQuestions } from "@/lib/interviews/content";
 import { QuestionBankClient } from "./QuestionBankClient";
 
 export const metadata = {
-    title: "Question Bank | Interview Prep | PM Practice Lab",
+    title: "Question Bank - Interview Prep",
 };
 
 export default function QuestionsPage() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/Card";
@@ -6,6 +7,11 @@ import { createClient } from "@/lib/supabase/server";
 import { getChallenges } from "@/lib/supabase/queries";
 import { toSentenceCase } from "@/lib/format";
 import { DashboardInterviewProgress } from "./DashboardInterviewProgress";
+
+export const metadata: Metadata = {
+    title: "Dashboard",
+    description: "Track your PM challenge progress, submissions, and scores.",
+};
 
 interface SubmissionRow {
     id: string;

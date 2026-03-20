@@ -6,9 +6,28 @@ import { MobileBottomNav } from "@/components/nav/MobileBottomNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "PM Practice Lab",
+    title: {
+        default: "PM Practice Lab",
+        template: "%s | PM Practice Lab",
+    },
     description:
         "Practice real PM work. Get structured AI feedback. Build the skills that matter.",
+    openGraph: {
+        title: "PM Practice Lab",
+        description:
+            "Practice real PM work. Get structured AI feedback. Build the skills that matter.",
+        type: "website",
+        siteName: "PM Practice Lab",
+    },
+    twitter: {
+        card: "summary",
+        title: "PM Practice Lab",
+        description:
+            "Practice real PM work. Get structured AI feedback. Build the skills that matter.",
+    },
+    icons: {
+        icon: "/favicon.svg",
+    },
 };
 
 export default function RootLayout({

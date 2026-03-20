@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { getChallenges } from "@/lib/supabase/queries";
 import { ChallengeListClient } from "./ChallengeListClient";
+
+export const metadata: Metadata = {
+    title: "Challenges",
+    description: "Browse PM challenges. Practice PRDs, prioritization, metrics, and more.",
+};
 
 export default async function ChallengesPage() {
     const challenges = await getChallenges();

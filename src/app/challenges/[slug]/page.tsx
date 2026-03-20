@@ -1,9 +1,24 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { getChallengeBySlug } from "@/lib/supabase/queries";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const { slug } = await params;
+    const challenge = await getChallengeBySlug(slug);
+    if (!challenge) return { title: "Challenge not found" };
+    return {
+        title: challenge.title,
+        description: challenge.description,
+    };
+}
 
 export default async function ChallengeDetailPage({
     params,
