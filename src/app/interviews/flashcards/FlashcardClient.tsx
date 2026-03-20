@@ -8,6 +8,7 @@ import { INTERVIEW_CATEGORIES, CATEGORY_LABELS } from "@/types/interview";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { useFlashcardProgress } from "@/features/interviews/useFlashcardProgress";
+import { shuffleArray } from "@/lib/interviews/content";
 
 interface FlashcardClientProps {
     questions: InterviewQuestion[];
@@ -24,14 +25,37 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
     const [flipped, setFlipped] = useState(false);
     const [flashColor, setFlashColor] = useState<string | null>(null);
     const [finished, setFinished] = useState(false);
+    const [shuffled, setShuffled] = useState(false);
+    const [shuffleKey, setShuffleKey] = useState(0);
     const cardRef = useRef<HTMLDivElement>(null);
 
     const { mark, getMark, counts } = useFlashcardProgress();
 
-    const filtered =
+    const baseFiltered =
         category === "all"
             ? questions
             : questions.filter((q) => q.category === category);
+
+    const [shuffledCards, setShuffledCards] = useState<InterviewQuestion[]>([]);
+
+    useEffect(() => {
+        if (shuffled) {
+            const base =
+                category === "all"
+                    ? questions
+                    : questions.filter((q) => q.category === category);
+            setShuffledCards(shuffleArray(base));
+        }
+    }, [shuffled, category, shuffleKey, questions]);
+
+    const filtered = shuffled && shuffledCards.length > 0 ? shuffledCards : baseFiltered;
+
+    const handleShuffle = useCallback(() => {
+        setShuffled(true);
+        setShuffleKey((k) => k + 1);
+        setCurrentIndex(0);
+        setFlipped(false);
+    }, []);
 
     const currentCard = filtered[currentIndex];
 
@@ -113,12 +137,15 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
                 case "3":
                     handleMark("skipped");
                     break;
+                case "s":
+                    handleShuffle();
+                    break;
             }
         }
 
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [handleFlip, handleNext, handlePrev, handleMark, finished]);
+    }, [handleFlip, handleNext, handlePrev, handleMark, handleShuffle, finished]);
 
     useEffect(() => {
         cardRef.current?.focus();
@@ -135,7 +162,16 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
                         Back to Interview Prep
                     </Link>
                 </div>
-                <CategoryFilter category={category} setCategory={setCategory} />
+                <div className="flex items-center justify-between gap-3">
+                    <CategoryFilter category={category} setCategory={setCategory} />
+                    <button
+                        type="button"
+                        onClick={handleShuffle}
+                        className="shrink-0 px-3 py-1 text-[12px] font-medium rounded-[var(--radius-sm)] bg-bg-secondary text-text-secondary hover:text-text-primary transition-colors"
+                    >
+                        Shuffle
+                    </button>
+                </div>
                 <div className="mt-12 text-center">
                     <p className="text-[15px] text-text-secondary">
                         No questions match this category. Try selecting a different one or view all.
@@ -225,7 +261,16 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
                 </Link>
             </div>
 
-            <CategoryFilter category={category} setCategory={setCategory} />
+            <div className="flex items-center justify-between gap-3">
+                <CategoryFilter category={category} setCategory={setCategory} />
+                <button
+                    type="button"
+                    onClick={handleShuffle}
+                    className="shrink-0 px-3 py-1 text-[12px] font-medium rounded-[var(--radius-sm)] bg-bg-secondary text-text-secondary hover:text-text-primary transition-colors"
+                >
+                    Shuffle
+                </button>
+            </div>
 
             <div
                 className="mt-4 mb-4 flex items-center justify-between"
@@ -377,6 +422,7 @@ export function FlashcardClient({ questions }: FlashcardClientProps) {
                 <span>Space: Flip</span>
                 <span>Arrows: Navigate</span>
                 <span>1/2/3: Mark</span>
+                <span>S: Shuffle</span>
             </div>
         </div>
     );
