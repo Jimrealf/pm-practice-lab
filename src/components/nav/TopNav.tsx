@@ -29,7 +29,7 @@ export function TopNav() {
     }
 
     return (
-        <header className="hidden md:flex items-center justify-between h-14 px-6 border-b border-border bg-bg-card/80 backdrop-blur-sm sticky top-0 z-40">
+        <header className="hidden md:flex items-center justify-between h-14 px-6 border-b border-border bg-bg-card/95 backdrop-blur-sm sticky top-0 z-50">
             <div className="flex items-center gap-8">
                 <Link
                     href="/"

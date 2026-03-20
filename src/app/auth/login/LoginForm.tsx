@@ -11,6 +11,11 @@ import { createClient } from "@/lib/supabase/client";
 
 const GOOGLE_ENABLED = true;
 
+function getSiteUrl() {
+    if (typeof window !== "undefined") return window.location.origin;
+    return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+}
+
 export function LoginForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
