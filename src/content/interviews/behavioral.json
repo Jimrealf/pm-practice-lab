@@ -1,0 +1,812 @@
+[
+    {
+        "id": "beh-001",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a time you had to make a difficult prioritization decision.",
+        "answer": "A strong answer uses the STAR framework: describe the Situation (competing priorities, limited resources), Task (what needed to be decided), Action (how you evaluated tradeoffs, what framework you used), and Result (what happened, what you learned). The best answers show a structured approach to prioritization rather than gut feel.",
+        "explanation": "Interviewers want to see that you have a repeatable process for making tradeoff decisions, not just that you made one good call. Frameworks like RICE, ICE, or impact vs. effort matrices show structured thinking.",
+        "tags": [
+            "prioritization",
+            "STAR",
+            "tradeoffs"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Describe a time you chose the easiest task to complete first",
+                "Use STAR format to walk through a specific prioritization decision with clear tradeoffs",
+                "Explain that you always follow your manager's priorities",
+                "List all the prioritization frameworks you know"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-002",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Describe a situation where you disagreed with your engineering team. How did you handle it?",
+        "answer": "The best answers show empathy and collaboration, not 'winning' the argument. Walk through: what the disagreement was about, why you understood the engineering perspective, how you found common ground or used data to align, and what the outcome was. Interviewers want to see that you can be both conviction-driven and collaborative.",
+        "explanation": "PM-engineering conflict is one of the most common interview topics because it reveals how you handle cross-functional tension. The worst answers frame it as PM vs. eng. The best answers frame it as 'we had different information and found a way to align.'",
+        "tags": [
+            "conflict",
+            "engineering",
+            "collaboration"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Explain that you escalated to your manager to resolve the disagreement",
+                "Describe how you convinced the engineers they were wrong using your product sense",
+                "Walk through understanding their concerns, sharing your data, and finding a solution together",
+                "Say you always defer to engineering on technical decisions"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "beh-003",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "How do you handle stakeholder conflicts when multiple teams want different things?",
+        "answer": "Strong answers demonstrate: (1) understanding each stakeholder's underlying motivation (not just their surface request), (2) finding the shared objective they all care about, (3) using data or user impact to create an objective ranking, (4) communicating the decision transparently with reasoning. The best PMs turn stakeholder conflicts into alignment opportunities.",
+        "explanation": "This tests your ability to manage up and across. Interviewers want to see political awareness without political behavior. Understanding motivations is key because stakeholders often argue about solutions when they actually agree on the problem.",
+        "tags": [
+            "stakeholders",
+            "conflict-resolution",
+            "alignment"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give each stakeholder equal priority by splitting resources evenly",
+                "Identify each stakeholder's underlying motivation, find shared objectives, and use data to prioritize",
+                "Let the most senior stakeholder decide since they have the most context",
+                "Avoid the conflict by working on unrelated features until it resolves itself"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-004",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a product you launched that did not meet expectations. What happened?",
+        "answer": "This is a failure question, and the best answers own the failure without making excuses. Structure: what was the product, what were the expectations, what actually happened, what were the root causes (be honest), and most importantly, what you learned and changed as a result. Show growth, not blame.",
+        "explanation": "Failure questions test self-awareness and growth mindset. Red flags: blaming others, minimizing the failure, or not having a clear learning. Green flags: candor, specific lessons, and evidence that you changed your approach afterward.",
+        "tags": [
+            "failure",
+            "learning",
+            "self-awareness"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Describe a launch that went perfectly to show your competence",
+                "Explain the failure briefly and spend most of the time on what others did wrong",
+                "Own the failure honestly, explain root causes, and describe specific changes you made afterward",
+                "Say you have never launched a product that did not meet expectations"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "beh-005",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "How do you decide when to push back on a deadline versus adjusting scope?",
+        "answer": "Strong answer: I evaluate three factors: (1) Is the deadline externally fixed (regulatory, contractual, market window) or internally set? (2) What is the cost of cutting scope versus the cost of missing the deadline? (3) Can we ship an MVP by the deadline and iterate? I default to scope reduction over deadline extension because shipping builds momentum and generates real user feedback.",
+        "explanation": "This tests PM judgment about the tension between quality and speed. The best PMs have a clear mental model for when to flex on scope vs. timeline. Interviewers want to see that you do not treat deadlines as sacred or disposable, but evaluate each situation.",
+        "tags": [
+            "deadlines",
+            "scope",
+            "tradeoffs",
+            "shipping"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Always push back on deadlines because quality matters most",
+                "Always cut scope because shipping on time is the only thing that matters",
+                "Evaluate whether the deadline is fixed, compare costs of scope cuts vs. delay, and default to shipping an MVP",
+                "Let the engineering team decide since they know how long things take"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "beh-006",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a time you had to influence without authority.",
+        "answer": "Walk through a situation where you needed to get someone (or a team) to do something without being their boss. The best answers show: understanding what motivates the other person, framing your request in terms of their goals, building trust through small wins, and being patient. PMs influence through credibility, data, and relationships, not positional power.",
+        "explanation": "Influence without authority is the core PM skill. Every PM interview will test this directly or indirectly. The key insight interviewers look for: you understood the other person's incentives and aligned your request with them.",
+        "tags": [
+            "influence",
+            "leadership",
+            "cross-functional"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Describe how you used your manager's authority to get the team to comply",
+                "Explain how you understood the other person's goals, built trust, and aligned your request with their incentives",
+                "Share how you sent a compelling email that convinced everyone",
+                "Talk about how you went around the person to their manager"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-007",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Tell me about a time you had to make a decision with incomplete information.",
+        "answer": "The best answers show a structured approach to uncertainty: (1) What information did you have? (2) What information was missing? (3) What was the cost of waiting for more data vs. deciding now? (4) How did you mitigate risk while moving forward? (5) What happened, and would you make the same decision again? Show that you can be decisive without being reckless.",
+        "explanation": "PMs make decisions with incomplete data every day. Interviewers want to see that you are comfortable with ambiguity but not careless about it. The worst answers: 'I waited until I had all the data' (too slow) or 'I just went with my gut' (too reckless).",
+        "tags": [
+            "decision-making",
+            "ambiguity",
+            "risk"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Explain that you always gather complete data before making any decision",
+                "Assess what you know, what is missing, the cost of delay, and how to mitigate risk while moving forward",
+                "Say you trust your instincts and make quick gut decisions",
+                "Describe how you delegated the decision to someone with more information"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-008",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "What is your approach to gathering user feedback?",
+        "answer": "A strong answer covers multiple methods and when to use each: (1) Quantitative: analytics, surveys, A/B tests for measuring behavior at scale. (2) Qualitative: user interviews, usability tests, support tickets for understanding why. (3) I start with qualitative to understand the problem space, use quantitative to validate at scale, and close the loop by testing solutions with real users.",
+        "explanation": "This tests whether you have a real user research practice or just say 'talk to users.' The best PMs have a toolkit of methods and know when each is appropriate. Bonus points for mentioning how you synthesize conflicting feedback.",
+        "tags": [
+            "user-research",
+            "feedback",
+            "data"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Rely primarily on NPS surveys and customer satisfaction scores",
+                "Combine qualitative methods (interviews, usability tests) with quantitative data (analytics, A/B tests) based on what you need to learn",
+                "Read app store reviews and social media comments",
+                "Build features and see if metrics go up or down"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-009",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Describe a time you had to kill a feature or project you had invested significant effort in.",
+        "answer": "Walk through: what the feature was, how much had been invested, what signal told you it should be killed (data, user feedback, strategic shift), how you made the case to stakeholders, and how the team reacted. Show that you prioritize outcomes over sunk costs and that you handled the emotional side (your own and the team's) with maturity.",
+        "explanation": "This is one of the hardest behavioral questions because it tests intellectual honesty and sunk cost resistance. Interviewers want to see that you can be objective about your own work and that you communicate difficult decisions with empathy.",
+        "tags": [
+            "sunk-cost",
+            "decision-making",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Say you have never had to kill a feature because you validate ideas thoroughly upfront",
+                "Describe continuing to invest because the team had already put in so much work",
+                "Walk through the decision to kill it based on data, how you communicated it, and what you learned",
+                "Explain that you let the feature ship anyway and hoped users would come around"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "beh-010",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "How do you build trust with a new engineering team?",
+        "answer": "Strong answers include specific actions: (1) Learn the codebase at a surface level so you understand constraints. (2) Ship a small win together early to build credibility. (3) Be reliable: do what you say, follow up on action items, protect the team from thrash. (4) Ask questions instead of giving orders. (5) Give credit publicly, take blame privately. Trust is earned through consistent behavior, not a kickoff meeting.",
+        "explanation": "This tests whether you understand that PM credibility is earned, not assumed. Engineers have usually worked with bad PMs before. The interviewers want to see that you are deliberate about earning trust and that you respect engineering as a craft.",
+        "tags": [
+            "trust",
+            "engineering",
+            "relationships",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-011",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Tell me about a time you had to manage a product through a crisis (outage, data breach, PR issue).",
+        "answer": "Structure around: (1) What happened and how you became aware. (2) Immediate triage: who needed to be looped in, what was the customer impact. (3) Communication: how you kept stakeholders and customers informed. (4) Resolution: what you did to fix the immediate issue. (5) Follow-up: what systemic changes you made to prevent recurrence. Show calm under pressure and systematic thinking.",
+        "explanation": "Crisis management reveals character. Interviewers look for: did you stay calm, did you communicate clearly, did you focus on customers first, and did you drive systemic improvement afterward? The worst answers focus only on the heroic fix without addressing prevention.",
+        "tags": [
+            "crisis-management",
+            "communication",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-012",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "How do you ensure alignment between design, engineering, and business teams?",
+        "answer": "Key practices: (1) Shared goals: ensure everyone understands the 'why' behind what you are building. (2) Early involvement: bring design and engineering into problem definition, not just solution execution. (3) Regular syncs with clear agendas and written outcomes. (4) Shared artifacts: PRDs, design specs, and technical docs that everyone contributes to. (5) Celebrate shared wins, not just PM wins.",
+        "explanation": "Cross-functional alignment is a daily PM responsibility. The interviewers want to see that you proactively create alignment rather than reacting when misalignment appears. The best answers show specific rituals or practices, not just good intentions.",
+        "tags": [
+            "alignment",
+            "cross-functional",
+            "communication"
+        ]
+    },
+    {
+        "id": "beh-013",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "How do you say no to feature ideas or requests?",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on team mistakes rather than your decisions",
+                "Answer with leadership buzzwords only"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-014",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "In layman terms, describe your day to day activities as a Product Manager.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on team mistakes rather than your decisions",
+                "Answer with leadership buzzwords only"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-015",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "How would you keep developers working on a product motivated and turning out quality work?",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on team mistakes rather than your decisions",
+                "Answer with leadership buzzwords only"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-016",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a time you had to make a difficult product trade-off.",
+        "answer": "Answer this with STAR and make the lens explicit: trade-off articulation under constraints. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on team mistakes rather than your decisions",
+                "Answer with leadership buzzwords only"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-017",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "What would your first 30/60/90-day plan look like as a new PM at a startup?",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ]
+    },
+    {
+        "id": "beh-018",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "What would you do if two senior stakeholders disagreed on a product direction?",
+        "answer": "Answer this with STAR and make the lens explicit: conflict resolution and influence without authority. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on team mistakes rather than your decisions",
+                "Answer with leadership buzzwords only"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-019",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a time you changed your mind after seeing new data.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-020",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Describe a time you had to deliver bad news to leadership.",
+        "answer": "Answer this with STAR and make the lens explicit: crisis ownership and communication clarity. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-021",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Tell me about a time you had to rebuild trust after missing a commitment.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership",
+            "trust-safety"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-022",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a situation where you had to influence a skeptical senior stakeholder.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-023",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Tell me about a time you made a decision that was unpopular but correct.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-024",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Describe a time you handled a major priority shift mid-quarter.",
+        "answer": "Answer this with STAR and make the lens explicit: trade-off articulation under constraints. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-025",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Tell me about a time you had to align a remote cross-functional team.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-026",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a time you had to resolve conflict between design and engineering.",
+        "answer": "Answer this with STAR and make the lens explicit: conflict resolution and influence without authority. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-027",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a time you used customer feedback to change roadmap direction.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-028",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Describe a time you delegated ownership and it did not go as planned.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-029",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Tell me about a time you had to advocate for quality over speed.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-030",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Describe a time you shipped quickly and later regretted a trade-off.",
+        "answer": "Answer this with STAR and make the lens explicit: trade-off articulation under constraints. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-031",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a time you had to operate with very limited engineering capacity.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-032",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a time you had to manage up when your manager disagreed with your recommendation.",
+        "answer": "Answer this with STAR and make the lens explicit: conflict resolution and influence without authority. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-033",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Tell me about a time you handled a high-pressure executive review.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-034",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Describe a time you turned around a struggling product area.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-035",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Tell me about a time you had to prioritize between revenue and user trust.",
+        "answer": "Answer this with STAR and make the lens explicit: trade-off articulation under constraints. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership",
+            "trust-safety"
+        ]
+    },
+    {
+        "id": "beh-036",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Describe a time you had to mentor a new PM or teammate.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-037",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Tell me about a time you made a hiring or team composition recommendation.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-038",
+        "category": "behavioral",
+        "difficulty": "advanced",
+        "question": "Describe a time you led without formal authority across multiple teams.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "beh-039",
+        "category": "behavioral",
+        "difficulty": "intermediate",
+        "question": "Tell me about a time you had to communicate uncertainty to customers.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ]
+    },
+    {
+        "id": "beh-040",
+        "category": "behavioral",
+        "difficulty": "beginner",
+        "question": "Describe a time you discovered a hidden assumption that changed the plan.",
+        "answer": "Answer this with STAR and make the lens explicit: stakeholder alignment and decision quality. Start with the business context and why the decision mattered at that moment. Describe your specific role, what alternatives you considered, and why you chose one path over others. Show cross-functional behavior, how you aligned design, engineering, and business stakeholders, and what tension you had to manage. End with measurable outcomes and one lesson that changed how you operate as a PM.",
+        "explanation": "Interviewers are testing ownership, judgment, and communication under ambiguity. Weak answers are vague, blame-oriented, or missing outcomes. Strong answers are concrete, metric-backed, and reflective about what changed after the event.",
+        "tags": [
+            "pm-interview",
+            "behavioral",
+            "star",
+            "leadership"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give a high-level story without specifics",
+                "Use STAR with concrete actions, measurable outcomes, and reflection",
+                "Focus on what the team did wrong",
+                "Answer with generic leadership principles"
+            ],
+            "correctIndex": 1
+        }
+    }
+]

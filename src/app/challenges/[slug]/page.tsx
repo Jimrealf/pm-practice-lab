@@ -27,6 +27,14 @@ export default async function ChallengeDetailPage({
     return (
         <div className="max-w-[1200px] mx-auto px-6 py-12">
             <div className="max-w-[680px]">
+                <div className="mb-6">
+                    <Link
+                        href="/challenges"
+                        className="text-[13px] text-text-secondary hover:text-accent transition-colors"
+                    >
+                        Back to Challenges
+                    </Link>
+                </div>
                 <div className="flex items-center gap-2">
                     <Badge variant="difficulty">{challenge.difficulty}</Badge>
                     <Badge variant="category">{challenge.category}</Badge>

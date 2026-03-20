@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
-import { ProgressBar } from "./ProgressBar";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { AutoSaveIndicator } from "./AutoSaveIndicator";
 import { MaterialsPanel } from "./MaterialsPanel";
 import { createClient } from "@/lib/supabase/client";

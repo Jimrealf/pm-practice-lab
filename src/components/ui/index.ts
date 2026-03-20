@@ -5,3 +5,4 @@ export { Textarea } from "./Textarea";
 export { Badge } from "./Badge";
 export { FeedbackDot } from "./FeedbackDot";
 export { Skeleton } from "./Skeleton";
+export { ProgressBar } from "./ProgressBar";

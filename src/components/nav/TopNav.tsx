@@ -11,6 +11,7 @@ import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 const navLinks = [
     { href: "/dashboard", label: "Dashboard" },
     { href: "/challenges", label: "Challenges" },
+    { href: "/interviews", label: "Interviews" },
 ];
 
 export function TopNav() {

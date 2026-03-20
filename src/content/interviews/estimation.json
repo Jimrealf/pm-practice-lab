@@ -1,0 +1,545 @@
+[
+    {
+        "id": "est-001",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How many piano tuners are in Chicago?",
+        "answer": "Classic Fermi estimation: (1) Chicago population: ~2.7M people, roughly 1M households. (2) Percentage of households with a piano: ~5%, so about 50,000 pianos. (3) Tuning frequency: pianos should be tuned 1-2 times per year, call it 1.5. So 75,000 tunings per year. (4) A piano tuner can do about 4 tunings per day, works ~250 days per year = 1,000 tunings per year. (5) 75,000 / 1,000 = about 75 piano tuners in Chicago. The actual number is estimated at 100-200, so this is in the right ballpark.",
+        "explanation": "Fermi estimation is about showing your thinking process, not getting the exact number. Break the problem into smaller, estimable pieces. State your assumptions clearly. Interviewers care about the structure of your reasoning, not the final number.",
+        "tags": [
+            "fermi",
+            "classic",
+            "market-sizing"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Google the answer and report it confidently",
+                "Break it down: households, piano ownership rate, tuning frequency, tuner capacity, then calculate",
+                "Guess a round number like 100 and explain it feels right",
+                "Say the question is too abstract to estimate without real data"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-002",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the revenue of Uber Eats in New York City.",
+        "answer": "Framework: (1) NYC population: ~8.3M. (2) What percentage uses food delivery? ~30% of adults, so about 2M users. (3) How often? Power users (20%) order 3x/week. Regular users (30%) order 1x/week. Occasional (50%) order 2x/month. (4) Weighted average: 0.2*3 + 0.3*1 + 0.5*0.5 = 1.15 orders/user/week. (5) Total orders/week: 2M * 1.15 = 2.3M. Per year: ~120M orders. (6) Average order value: $30. Total GMV: $3.6B. (7) Uber Eats take rate: ~25-30%. Revenue: ~$900M-$1.1B per year in NYC.",
+        "explanation": "Revenue estimation requires building from the bottom up: users, frequency, order value, then take rate. Show your segmentation (not all users behave the same). State each assumption and note where you are least confident. The interviewer may challenge one assumption to see how you adjust.",
+        "tags": [
+            "revenue",
+            "market-sizing",
+            "uber-eats",
+            "segmentation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Find Uber's total revenue and estimate NYC's share based on population",
+                "Build bottom-up: active users, segment by frequency, average order value, then apply take rate",
+                "Multiply the number of restaurants on Uber Eats by their average daily orders",
+                "Estimate based on how much you personally spend on Uber Eats"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-003",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How much storage does Gmail need per day?",
+        "answer": "Framework: (1) Gmail users: ~1.8B active users. (2) Emails per user per day: average ~50 received, ~10 sent. Focus on received since those use storage. (3) Average email size: most are text (5-10KB), some have attachments. Weighted average: ~75KB per email. (4) Daily storage: 1.8B users * 50 emails * 75KB = 6.75 petabytes per day. (5) With redundancy (Google stores multiple copies): 3x replication = ~20PB per day. (6) Sanity check: over a year that is ~7 exabytes, which is plausible for Google's scale.",
+        "explanation": "Storage estimation requires thinking about data volume at scale. The key is getting the right order of magnitude for average email size (most are small text, but attachments skew the average up significantly). Always do a sanity check against known facts about the company's infrastructure.",
+        "tags": [
+            "storage",
+            "infrastructure",
+            "gmail",
+            "data"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Multiply total users by the 15GB free storage limit",
+                "Estimate emails per user per day, average email size, multiply by users, then add replication overhead",
+                "Look up how many data centers Google operates and estimate per-center capacity",
+                "Calculate based on the maximum attachment size (25MB) per email"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-004",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How many gas stations are there in the United States?",
+        "answer": "Framework: (1) US population: ~330M. Approximately 280M registered vehicles. (2) How often does a car fill up? About once a week on average. (3) How many cars can a gas station serve per day? ~8 pumps, each serving ~3 cars/hour for 16 hours = 384 cars/day. (4) Cars per station per week: 384 * 7 = ~2,700. (5) Total fill-ups per week: 280M. (6) Gas stations needed: 280M / 2,700 = ~104,000. The actual number is about 150,000, so we are in the right range.",
+        "explanation": "This is a supply-demand estimation. You can approach from the demand side (how many fill-ups happen) or supply side (how many stations does a town need). Either works. The key is being explicit about your assumptions and checking if the answer passes a smell test.",
+        "tags": [
+            "fermi",
+            "supply-demand",
+            "infrastructure"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Estimate from demand: vehicles, fill-up frequency, station capacity, then divide",
+                "Count gas stations on a map of your city and multiply by the number of cities",
+                "Divide the number of miles of road by the average distance between gas stations",
+                "Use the number of gas station brands and estimate locations per brand"
+            ],
+            "correctIndex": 0
+        }
+    },
+    {
+        "id": "est-005",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Estimate the total addressable market (TAM) for a pet health insurance product in the US.",
+        "answer": "Framework: (1) US households: ~130M. (2) Pet ownership: ~67% of households own a pet = ~87M. (3) Dogs: ~65M households, Cats: ~47M households (overlap exists). (4) Insurance penetration: currently ~4% in the US (vs. 25% in UK). (5) Realistic serviceable market: focus on dogs and cats with veterinary relationships. About 85% of pet owners visit a vet = ~74M households. (6) Willingness to pay: average pet insurance premium is ~$50/month ($600/year). (7) TAM at full penetration: 74M * $600 = ~$44B. (8) Realistic SAM (serviceable addressable): at UK-like 25% penetration = ~$11B.",
+        "explanation": "TAM estimation for a specific industry requires layering assumptions: total market, then filtering by eligibility, willingness, and realistic penetration. Always distinguish between TAM (theoretical maximum), SAM (realistic serviceable), and SOM (what you could capture). Using a comparable market (UK penetration) as a benchmark adds credibility.",
+        "tags": [
+            "TAM",
+            "market-sizing",
+            "insurance",
+            "pets"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Multiply the US population by an average insurance premium",
+                "Layer assumptions: pet ownership, veterinary relationships, willingness to pay, and use comparable markets for penetration benchmarks",
+                "Research the current market size and grow it by the industry growth rate",
+                "Survey 100 pet owners and extrapolate their willingness to pay"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-006",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How many text messages are sent globally per day?",
+        "answer": "Framework: (1) Global smartphone users: ~6.5B. (2) Not all use SMS; many use WhatsApp, iMessage, etc. Include all messaging. (3) Segment by behavior: heavy users (20%) send ~50 messages/day. Medium (40%) send ~15/day. Light (40%) send ~3/day. (4) Weighted average: 0.2*50 + 0.4*15 + 0.4*3 = 17.2 messages/user/day. (5) Total: 6.5B * 17.2 = ~112B messages per day. (6) Sanity check: WhatsApp alone reports ~100B messages/day, plus SMS, iMessage, Telegram, etc. Estimate is likely in the right ballpark at 100-150B.",
+        "explanation": "When estimating global figures, segment users by behavior intensity. Do not use a single average. The sanity check against known data points (WhatsApp's published stats) is a strong move that shows you calibrate your estimates against reality.",
+        "tags": [
+            "global",
+            "messaging",
+            "fermi",
+            "segmentation"
+        ]
+    },
+    {
+        "id": "est-007",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How many Airbnb listings are there in Paris?",
+        "answer": "Framework: (1) Paris population: ~2.2M in city proper, ~12M in metro area. Focus on city proper for Airbnb density. (2) Housing units in Paris: ~1.4M. (3) What percentage are Airbnb listings? Not all are full-time listings. Estimate: 3-5% of housing units listed on Airbnb at any time = 42,000-70,000. (4) Cross-check: Paris is one of Airbnb's top markets. Total global listings ~7M. Top 5 cities might represent ~5% = 350,000, divided among 5 cities = ~70,000 per city. (5) Estimate: ~50,000-70,000 listings. Actual number is approximately 65,000.",
+        "explanation": "Use multiple estimation approaches and triangulate. The housing-based approach and the top-down global approach both point to a similar range, which increases confidence. When two independent methods agree, your estimate is likely close.",
+        "tags": [
+            "airbnb",
+            "market-sizing",
+            "triangulation",
+            "travel"
+        ]
+    },
+    {
+        "id": "est-008",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Estimate the cost of running YouTube for one day.",
+        "answer": "Framework: (1) Video views per day: ~5B. Average video length: ~7 minutes. Total watch time: ~35B minutes/day. (2) Bandwidth: average bitrate ~5 Mbps. 35B minutes * 5 Mbps * 60 seconds = ~10.5 exabytes/day. At ~$0.01/GB for Google's internal CDN cost: ~$105M/day for bandwidth alone. (3) Storage: ~500 hours uploaded per minute = 720,000 hours/day. At ~2GB per hour in multiple resolutions: ~10PB new storage/day. At $0.02/GB/month: relatively small vs. bandwidth. (4) Compute: transcoding, recommendations, search, ads. Estimate 1M server-hours/day at $0.10/hour = $100K. (5) Total: bandwidth dominates at roughly $100M+/day. YouTube's annual revenue is ~$30B, so daily cost of ~$80-100M is plausible.",
+        "explanation": "Infrastructure cost estimation requires identifying the dominant cost driver. For video platforms, bandwidth overwhelms compute and storage costs. The sanity check against known revenue figures helps validate the order of magnitude.",
+        "tags": [
+            "infrastructure",
+            "cost-estimation",
+            "youtube",
+            "video"
+        ]
+    },
+    {
+        "id": "est-009",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How many flights take off globally every day?",
+        "answer": "Framework: (1) Major airports globally: ~500 airports handle most traffic. (2) Average flights per major airport per day: varies hugely. Top hubs (ATL, DXB) have ~1,200/day. Mid-tier airports ~200/day. Small international ~50/day. (3) Weighted: 50 top hubs * 800 + 150 mid * 200 + 300 small * 50 = 40,000 + 30,000 + 15,000 = 85,000. (4) Add smaller regional airports (~5,000 globally) at ~10 flights/day = 50,000. (5) Total: ~135,000 flights per day. (6) Cross-check: US alone has ~45,000 flights/day (FAA data). US is roughly 25-30% of global air traffic, so global = ~150,000. Estimates align.",
+        "explanation": "Segmenting airports by size prevents the common mistake of using a single average. The US cross-check against known FAA data is a strong validation technique. Always look for publicly available data points to anchor your estimates.",
+        "tags": [
+            "aviation",
+            "global",
+            "fermi",
+            "segmentation"
+        ]
+    },
+    {
+        "id": "est-010",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How many coffee cups does Starbucks sell per day in the US?",
+        "answer": "Framework: (1) Starbucks US stores: ~16,000. (2) Operating hours: ~14 hours/day (5am-7pm average). (3) Drinks per store per hour: morning rush (6-9am) ~60/hour, midday ~25/hour, afternoon ~30/hour, evening ~15/hour. (4) Weighted daily total per store: 3*60 + 3*25 + 3*30 + 5*15 = 180 + 75 + 90 + 75 = 420 drinks/store/day. (5) Total: 16,000 * 420 = ~6.7M drinks per day. (6) Sanity check: Starbucks reports ~8M US customers per day, and some buy food only, so ~6-7M drinks is consistent.",
+        "explanation": "For retail estimation, work from store count and per-store throughput. Segmenting by time of day is important because customer traffic varies dramatically. The sanity check against Starbucks' reported customer count validates the approach.",
+        "tags": [
+            "retail",
+            "starbucks",
+            "throughput",
+            "fermi"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Divide Starbucks' annual US revenue by the average drink price and then by 365",
+                "Estimate per-store throughput by time of day, multiply by store count, then sanity check against reported data",
+                "Estimate the US population that drinks coffee and assume a percentage goes to Starbucks",
+                "Count how many drinks your local Starbucks makes and multiply by total stores"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-011",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Calculate the number of queries answered by Google per second.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "estimation"
+        ]
+    },
+    {
+        "id": "est-012",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How many dentists are there in New York?",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-013",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How do you decide how many cash registers you need for a new Walmart store?",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "estimation",
+            "walmart"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-014",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of Uber rides.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "mobility",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-015",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How would you grow the number of Uber drivers?",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "mobility",
+            "estimation",
+            "uber"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-016",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "How many iPhones does Apple sell in a year?",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "estimation",
+            "apple",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-017",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "Estimate the size of the market for a food delivery app in the US.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation",
+            "market-sizing"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-018",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of planes that are in the air in an hour.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation"
+        ]
+    },
+    {
+        "id": "est-019",
+        "category": "estimation",
+        "difficulty": "beginner",
+        "question": "How would you increase the number of Airbnb listings?",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "marketplace",
+            "estimation",
+            "airbnb"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-020",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of software engineers in the US.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-021",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Estimate the revenue of a mid-sized SaaS company.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-022",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Estimate the number of Google searches conducted globally per day.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-023",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of orders delivered by Swiggy per hour in India.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation",
+            "swiggy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-024",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of active WhatsApp users in India.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation",
+            "whatsapp"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-025",
+        "category": "estimation",
+        "difficulty": "advanced",
+        "question": "Estimate the total value of all cars sold in the US in a year.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "est-026",
+        "category": "estimation",
+        "difficulty": "intermediate",
+        "question": "Estimate the number of pizza deliveries made in the US per day.",
+        "answer": "Use a bottom-up Fermi approach: define the target unit, break the problem into assumptions, and calculate transparently step by step. State assumptions as ranges when uncertainty is high, and call out which variable has the biggest impact on the final number. Run a sanity check against a known benchmark and adjust if the estimate is off by an order of magnitude. Present a final range with confidence level rather than a false-precision point estimate.",
+        "explanation": "Interviewers score reasoning quality more than numeric exactness. Weak answers hide assumptions or skip sanity checks. Strong answers are explicit, numerate, and calibrated with benchmark validation.",
+        "tags": [
+            "pm-interview",
+            "estimation"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Give one best-guess number without calculations",
+                "Use bottom-up assumptions, calculate transparently, and run a sanity check",
+                "Use only top-down TAM percentages",
+                "Search online for the exact answer"
+            ],
+            "correctIndex": 1
+        }
+    }
+]

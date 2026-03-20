@@ -1,0 +1,749 @@
+[
+    {
+        "id": "str-001",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Should Spotify launch a hardware device?",
+        "answer": "Framework: (1) Why consider hardware? Control the listening experience, reduce dependency on Apple/Google, capture more margin, and own the customer relationship. (2) Precedent: Amazon Echo succeeded as a hardware+service play. (3) Arguments for: differentiated listening experience, smart speaker market growing, hardware as a wedge into the home. (4) Arguments against: hardware is a different business (manufacturing, supply chain, returns), Spotify's strength is software and content, smart speakers are commoditizing, Apple and Amazon have massive hardware advantages. (5) Recommendation: No. Spotify should deepen integrations with existing hardware (Sonos, car systems, wearables) rather than compete on hardware. The risk-reward is unfavorable given the competitive landscape.",
+        "explanation": "Strategy questions require evaluating both sides before recommending. The interviewer wants to see that you can think about market dynamics, competitive advantage, and risk. The strongest answers acknowledge the appeal of the rejected option and explain specifically why the risk outweighs the reward.",
+        "tags": [
+            "spotify",
+            "hardware",
+            "strategy",
+            "market-entry"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Yes, because the smart speaker market is growing fast",
+                "No, because Spotify should deepen hardware integrations rather than compete against Apple and Amazon in manufacturing",
+                "Yes, but only if they acquire an existing hardware company",
+                "No, because hardware margins are too low for a subscription business"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-002",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "How would you enter the Indian market with a food delivery app?",
+        "answer": "Framework: (1) Market analysis: India has 1.4B people, rapidly growing internet penetration (~50%), strong existing players (Zomato, Swiggy with 95%+ market share). (2) Entry barriers: extreme price sensitivity (average order value ~$3-4), complex logistics (dense cities, traffic), established brand loyalty, regulatory complexity across states. (3) Strategic options: (a) Acquire a local player, (b) Partner with existing platforms, (c) Find an underserved niche. (4) Recommendation: do not compete head-on with Zomato/Swiggy. Either acquire a smaller regional player for market entry, or find a wedge: corporate/office meals, premium-only segment, or specific cuisine verticals that incumbents underserve. (5) Key metric for go/no-go: unit economics must work at Indian price points within 18 months.",
+        "explanation": "Market entry questions test your ability to assess competitive dynamics honestly. The worst answer is 'just build a better product.' The best answers acknowledge the strength of incumbents and find creative entry strategies. India-specific factors (price sensitivity, logistics complexity, regulatory fragmentation) show you understand that market context matters.",
+        "tags": [
+            "market-entry",
+            "india",
+            "food-delivery",
+            "competition"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Launch with massive discounts to undercut Zomato and Swiggy on price",
+                "Build a premium-only service targeting high-income urban users",
+                "Analyze the competitive landscape, find underserved segments, and consider acquisition for market entry",
+                "Partner with local restaurants exclusively to differentiate on selection"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-003",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What should Google do about TikTok?",
+        "answer": "Framework: (1) Competitive threat: TikTok captures attention (150M US users, 90 min/day average) that would otherwise go to YouTube. It is especially strong with Gen Z. (2) Google's position: YouTube is still the dominant video platform by revenue and total watch time, but growth is slowing in short-form. (3) YouTube Shorts strategy assessment: 2B monthly views is strong adoption, but monetization is weaker than long-form. (4) Recommendation: Google should not try to 'beat TikTok at TikTok.' Instead: (a) Double down on YouTube's unique advantages (creator monetization, long-form, livestreaming), (b) Make Shorts a discovery funnel for long-form content, (c) Improve creator tools and monetization to make YouTube the place creators build careers, not just post clips. (5) The real war is for creator supply, not user attention.",
+        "explanation": "Competitive strategy questions require understanding each player's strengths. The trap is to propose copying the competitor's features. The best answers identify asymmetric advantages: what can Google do that TikTok cannot? Creator monetization and the long-form ecosystem are YouTube's moat.",
+        "tags": [
+            "google",
+            "tiktok",
+            "competitive-strategy",
+            "video"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Invest heavily in making YouTube Shorts identical to TikTok",
+                "Acquire TikTok's technology and integrate it into YouTube",
+                "Leverage YouTube's unique strengths (creator monetization, long-form) and use Shorts as a funnel rather than competing feature-for-feature",
+                "Launch a separate short-form video app to compete directly with TikTok"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-004",
+        "category": "strategy",
+        "difficulty": "beginner",
+        "question": "How would you decide whether to build a feature in-house or buy/integrate a third-party solution?",
+        "answer": "Framework: (1) Is this a core differentiator? If yes, build in-house. If it is table stakes, buy. (2) Total cost of ownership: buying seems cheaper upfront but consider integration cost, ongoing licensing, vendor lock-in, and limited customization. (3) Time to market: buying is faster if you need to ship now. Building is better for long-term control. (4) Team capability: does your team have the expertise? If not, buying bridges the gap while you hire. (5) Decision matrix: Core + team capable = build. Core + no team = build but hire. Non-core + good vendor = buy. Non-core + no good vendor = build minimal. (6) Example: payment processing is non-core for most companies, so use Stripe. Recommendation engine might be core for Netflix, so build in-house.",
+        "explanation": "Build vs. buy is a fundamental PM decision. The best answers have a clear decision framework and recognize that 'core vs. non-core' is the primary axis. Specific examples (Stripe for payments, in-house for core differentiators) show practical judgment.",
+        "tags": [
+            "build-vs-buy",
+            "strategy",
+            "decision-framework"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Always build in-house to maintain full control over the product",
+                "Always buy third-party solutions to save development time",
+                "Evaluate based on whether the feature is a core differentiator, total cost of ownership, time to market, and team capability",
+                "Let the engineering team decide based on technical complexity"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-005",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "You are the PM for a B2B SaaS product. Your largest customer (30% of revenue) is requesting a custom feature that conflicts with your product roadmap. What do you do?",
+        "answer": "Framework: (1) Understand the real need: what problem is behind the custom feature request? Often the underlying need can be solved by a general-purpose feature. (2) Quantify the risk: 30% revenue concentration is already dangerous. Building custom features for one customer makes it worse. (3) Options: (a) Build the general-purpose version that solves their need and benefits all customers. (b) Negotiate: offer a workaround or timeline for a broader solution. (c) Build the custom feature behind a feature flag, but only if it does not compromise the core product. (d) Say no and accept the risk of churn. (4) Recommendation: (a) if possible, otherwise (b). Never let one customer's requests drive your roadmap away from your vision. (5) Longer-term: reduce revenue concentration by diversifying your customer base.",
+        "explanation": "This tests product judgment under business pressure. The trap is to simply build what the big customer wants (which turns you into a consulting company) or to refuse (which risks losing 30% of revenue). The strongest answers find the creative middle: solve the underlying need in a way that benefits everyone.",
+        "tags": [
+            "b2b",
+            "customer-management",
+            "roadmap",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Build the custom feature immediately since losing 30% of revenue would be catastrophic",
+                "Refuse the request entirely and focus on the roadmap",
+                "Find the underlying need, explore a general-purpose solution that serves all customers, and address the revenue concentration risk",
+                "Build the custom feature but charge the customer extra for it"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-006",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Should Netflix invest in gaming?",
+        "answer": "Framework: (1) Why gaming? Attention competition: gaming captures more hours than streaming among 18-34 year olds. Netflix needs to stay relevant as an entertainment platform, not just a video service. (2) Strategic fit: Netflix has 230M+ subscribers, brand recognition, and original IP that could become games. (3) Challenges: gaming is a different competency (interactive vs. passive), massive competition (Sony, Microsoft, mobile publishers), and Netflix's previous gaming attempts had limited traction. (4) Arguments for: deepens engagement, leverages IP, and games do not need to be AAA to add value (mobile-first, narrative games). (5) Arguments against: dilutes focus, high cost of quality games, subscriber churn is driven by content quality not breadth. (6) Recommendation: invest modestly in narrative, IP-based mobile games as a retention feature, not a growth driver. Do not try to compete with Xbox Game Pass.",
+        "explanation": "Strategy questions about adjacent markets test whether you can evaluate opportunities without being seduced by market size alone. The best answers consider strategic fit, competitive dynamics, and realistic scope. 'Invest modestly in a specific niche' is often a stronger answer than 'go all in' or 'stay out entirely.'",
+        "tags": [
+            "netflix",
+            "gaming",
+            "adjacent-markets",
+            "strategy"
+        ]
+    },
+    {
+        "id": "str-007",
+        "category": "strategy",
+        "difficulty": "beginner",
+        "question": "How do you decide what to put on your product roadmap?",
+        "answer": "Framework: (1) Start with strategy: what are the company's top 3 priorities this quarter? Everything on the roadmap should connect to at least one. (2) Input sources: user feedback (support tickets, interviews, NPS comments), data (usage analytics, funnel drop-offs, feature adoption), stakeholders (sales requests, executive vision), technical (debt, infrastructure needs). (3) Prioritization: score items on impact (how many users, how much value), effort (engineering weeks), strategic alignment, and risk. (4) Categories: must-do (bugs, compliance, infrastructure), should-do (features that serve the strategy), could-do (nice-to-haves that wait). (5) Communicate: share the roadmap and the reasoning behind what was cut, not just what was included.",
+        "explanation": "Roadmap planning is a foundational PM skill. The best answers show a systematic process, not personal preference. Interviewers want to see that you balance multiple inputs (data, users, business, technical) and can say no to good ideas that do not align with strategy.",
+        "tags": [
+            "roadmap",
+            "planning",
+            "prioritization"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Put the features that engineering is most excited about building",
+                "Survey customers and build whatever they ask for most frequently",
+                "Align with company strategy, gather inputs from multiple sources, prioritize by impact and effort, and communicate tradeoffs",
+                "Copy what competitors are launching and stay at feature parity"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-008",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "How would you evaluate whether to launch a freemium tier for a product that is currently paid-only?",
+        "answer": "Framework: (1) Goal clarity: is freemium for user acquisition (top of funnel) or for market positioning (category leadership)? (2) Model viability: can you define a free tier that delivers enough value to hook users but leaves enough value in paid to convert? (3) Key metrics to model: free-to-paid conversion rate (industry avg: 2-5%), cost to serve free users (infrastructure, support), incremental paid conversions vs. cannibalization of existing paid users. (4) Risks: if free tier is too good, nobody upgrades. If too limited, nobody uses it. Free users can also cost support and infrastructure with no revenue. (5) Alternatives: free trial (time-limited access to full product) often works better than freemium for B2B. (6) Recommendation: model the economics. If serving 100 free users to convert 3 paid ones is profitable, freemium works. If not, use a free trial instead.",
+        "explanation": "Freemium is a business model decision, not a feature decision. The best answers model the economics before recommending. The key tradeoff is acquisition velocity vs. cannibalization risk. Interviewers want to see financial reasoning, not just product intuition.",
+        "tags": [
+            "freemium",
+            "business-model",
+            "pricing",
+            "conversion"
+        ]
+    },
+    {
+        "id": "str-009",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Your company's primary competitor just launched an AI feature that got significant press coverage. Your CEO wants you to build an AI feature immediately. What do you do?",
+        "answer": "Framework: (1) Do not panic-ship. First question: is the competitor's AI feature actually driving user adoption or just press coverage? Check their downloads, reviews, social sentiment. (2) Second question: does AI align with our product strategy and user needs? Not every product needs AI. (3) If yes to both: identify the specific user problem AI can solve better than the current solution. Build from the problem, not from the technology. (4) If no: present data to the CEO showing that the competitive threat is press-driven, not market-driven, and propose where AI could add genuine value on our roadmap timeline. (5) Either way: do not ship an AI wrapper for the sake of having AI. Users see through that immediately.",
+        "explanation": "This tests your ability to maintain product discipline under competitive pressure. The CEO's instinct is understandable but potentially destructive. The strongest PMs push back with data and redirect toward strategic AI use, rather than either blindly complying or simply saying no.",
+        "tags": [
+            "ai",
+            "competitive-response",
+            "CEO-management",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start building an AI feature immediately to match the competitor",
+                "Tell the CEO that AI is overhyped and we should ignore it",
+                "Evaluate whether the competitor's AI is driving real adoption, then propose AI investment that solves real user problems on our timeline",
+                "Acquire an AI startup to accelerate development"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "str-010",
+        "category": "strategy",
+        "difficulty": "beginner",
+        "question": "How do you measure the success of a product launch?",
+        "answer": "Framework: (1) Define success before launch, not after. Tie metrics to the goals of the launch. (2) Short-term metrics (week 1-2): adoption rate (signups, activations, feature usage), initial user feedback (NPS, qualitative), technical health (error rates, latency). (3) Medium-term metrics (month 1-3): retention (are users coming back?), engagement depth (how much are they using it?), conversion impact. (4) Long-term metrics (quarter): revenue impact, market share, customer lifetime value. (5) Leading vs. lagging: early usage patterns predict long-term retention. Watch for Week 1 retention curves. (6) The most important metric: are users who adopt this feature retaining at a higher rate than those who do not?",
+        "explanation": "Launch measurement tests whether you think beyond vanity metrics (downloads, signups) to meaningful outcomes (retention, engagement, revenue). The best answers define metrics at multiple time horizons and connect them to the launch's strategic purpose.",
+        "tags": [
+            "metrics",
+            "launch",
+            "measurement",
+            "success-criteria"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Track downloads and signups in the first week",
+                "Define success metrics before launch across short, medium, and long-term horizons including adoption, retention, and revenue",
+                "Wait three months and then look at revenue impact",
+                "Compare our launch metrics to the competitor's most recent launch"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-011",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What should Airbnb's strategy be during the COVID-19 pandemic?",
+        "answer": "Frame the strategy decision for Airbnb with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "marketplace",
+            "strategy",
+            "airbnb"
+        ]
+    },
+    {
+        "id": "str-012",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "How would you design surge pricing for Uber or Lyft?",
+        "answer": "Frame the strategy decision for Uber with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "mobility",
+            "strategy",
+            "pricing",
+            "uber"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-013",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "How would you launch (roll out) Amazon Go?",
+        "answer": "Frame the strategy decision for Amazon with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "strategy",
+            "launch"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-014",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "How would you monetize Facebook Messenger?",
+        "answer": "Frame the strategy decision for Facebook with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "strategy",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-015",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Design a product for Google to enter the food delivery market.",
+        "answer": "Frame the strategy decision for Google with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-016",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Describe how you would launch a new Google Maps feature.",
+        "answer": "Frame the strategy decision for Google with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "strategy"
+        ]
+    },
+    {
+        "id": "str-017",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What would you prioritize if you were PM of Instagram?",
+        "answer": "Frame the strategy decision for Instagram with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "strategy",
+            "faang-style",
+            "instagram"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-018",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "How would you launch a new payments product in India?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "launch"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-019",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What would you do if a key competitor launched a feature that your product does not have?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "strategy",
+            "launch"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-020",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "How would you prioritize features for a mobile banking app?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-021",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Lyft wants to enter the Indian market. What should be the strategy?",
+        "answer": "Frame the strategy decision for Lyft with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "mobility",
+            "strategy",
+            "market-sizing",
+            "lyft"
+        ]
+    },
+    {
+        "id": "str-022",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "Launch Google Maps for a new region.",
+        "answer": "Frame the strategy decision for Google with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-023",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What goals would you set for a Facebook Dating feature?",
+        "answer": "Frame the strategy decision for Facebook with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "strategy",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-024",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What is the best way to measure the success of a product launch?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "strategy",
+            "launch"
+        ]
+    },
+    {
+        "id": "str-025",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "Describe how you would prioritize your product roadmap.",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-026",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "You are PM at Stripe. How would you expand into new markets?",
+        "answer": "Frame the strategy decision for Stripe with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "market-sizing",
+            "stripe"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-027",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What metrics would you monitor after launching a new Amazon feature?",
+        "answer": "Frame the strategy decision for Amazon with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "metrics",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-028",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What strategy would you use to launch a new fintech product?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "launch"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-029",
+        "category": "strategy",
+        "difficulty": "advanced",
+        "question": "What strategy would you recommend for Netflix to grow in emerging markets?",
+        "answer": "Frame the strategy decision for Netflix with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "market-sizing",
+            "netflix",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-030",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "You are PM of Adobe Photoshop. What feature would you launch next?",
+        "answer": "Frame the strategy decision for Adobe with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "launch",
+            "adobe"
+        ]
+    },
+    {
+        "id": "str-031",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "You are the PM of Facebook Lite. What goals would you set?",
+        "answer": "Frame the strategy decision for Facebook with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "strategy",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-032",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "A company has launched a new drug that eliminates the need for sleep. How would you price this drug?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "launch"
+        ]
+    },
+    {
+        "id": "str-033",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What would you prioritize: fixing bugs or launching new features? Explain your framework.",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "strategy",
+            "launch"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-034",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "You are PM at Salesforce. How would you expand into SMB?",
+        "answer": "Frame the strategy decision for Salesforce with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "salesforce"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-035",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "How would you grow DoorDash's market share in a new city?",
+        "answer": "Frame the strategy decision for DoorDash with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "market-sizing",
+            "doordash"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Choose the fastest option and optimize later",
+                "Evaluate alternatives with tradeoffs, recommend one path, and define decision checkpoints",
+                "Mirror competitor moves feature for feature",
+                "Delay the decision until complete information is available"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "str-036",
+        "category": "strategy",
+        "difficulty": "intermediate",
+        "question": "What strategy would you use to build a marketplace for freelancers?",
+        "answer": "Frame the strategy decision for the company with objective, constraints, and 2-3 credible options. Evaluate each option across user impact, economics, execution risk, and strategic fit. Recommend one path and clearly state what you are choosing not to do now, including why that trade-off is acceptable. Define a phased plan with leading indicators, decision checkpoints, and rollback criteria if assumptions fail. Close with top risks, mitigations, and what evidence would cause you to pivot.",
+        "explanation": "Interviewers want balanced judgment and execution realism, not a one-line opinion. Common misses are skipping alternatives and failing to define decision thresholds. Strong responses compare trade-offs explicitly and make the recommendation testable over time.",
+        "tags": [
+            "pm-interview",
+            "strategy",
+            "market-sizing"
+        ]
+    }
+]

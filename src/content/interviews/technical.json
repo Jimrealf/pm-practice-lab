@@ -1,0 +1,577 @@
+[
+    {
+        "id": "tech-001",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "Explain how you would design an API for a ride-sharing app.",
+        "answer": "Key endpoints: (1) POST /rides/request - rider submits pickup/dropoff, receives ride ID and estimated time. (2) GET /rides/{id} - poll ride status (matching, en-route, arrived, in-progress, completed). (3) POST /rides/{id}/cancel - cancel with reason. (4) GET /drivers/nearby?lat=X&lng=Y - find available drivers. (5) POST /rides/{id}/rate - post-ride rating. Design decisions: use REST for simplicity, WebSocket for real-time location updates, include pagination for ride history, use idempotency keys for payment operations. Authentication via JWT tokens. Rate limiting per user to prevent abuse.",
+        "explanation": "API design questions test whether you can think about the system from both the user and developer perspective. Cover the core CRUD operations, real-time requirements, authentication, and error handling. You do not need to design every endpoint, but you need to cover the critical path.",
+        "tags": [
+            "api-design",
+            "ride-sharing",
+            "rest",
+            "systems"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Design a single endpoint that handles all ride operations through request parameters",
+                "Define RESTful endpoints for core operations (request, status, cancel, rate) with WebSocket for real-time updates",
+                "Use GraphQL for everything because it is more flexible than REST",
+                "Start with the database schema and derive the API from the table structure"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-002",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "How does A/B testing work? When would you not use it?",
+        "answer": "How it works: (1) Define hypothesis: 'Changing X will improve metric Y by Z%.' (2) Split users randomly into control (current) and treatment (change) groups. (3) Run the test until you reach statistical significance (usually p < 0.05, sufficient sample size). (4) Analyze results: did the treatment significantly outperform control? (5) Roll out the winner. When NOT to use A/B testing: (a) Low traffic (insufficient sample size for significance), (b) Ethical issues (cannot A/B test safety features), (c) Infrastructure changes (cannot easily split users), (d) The change is obviously necessary (fixing a bug), (e) Long-term effects matter more than short-term metrics (brand changes).",
+        "explanation": "A/B testing is the PM's core experimentation tool, but knowing when NOT to use it shows deeper understanding. Many candidates can explain the mechanics; fewer can articulate the limitations. The 'when not to use it' portion separates good from great answers.",
+        "tags": [
+            "ab-testing",
+            "experimentation",
+            "statistics",
+            "methodology"
+        ],
+        "multipleChoice": {
+            "options": [
+                "A/B testing randomly assigns users to groups and measures metric differences. Always use it for every product change.",
+                "A/B testing compares two versions with random user assignment. Skip it when traffic is too low, ethics prevent it, or changes are obviously necessary.",
+                "A/B testing shows different features to different users based on their preferences",
+                "A/B testing means releasing two different products and seeing which one gets more users"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-003",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "What are the tradeoffs between building vs. buying a solution?",
+        "answer": "Build advantages: full control, deep customization, no vendor lock-in, can become a competitive advantage. Build disadvantages: higher upfront cost, longer time to market, ongoing maintenance burden, requires in-house expertise. Buy advantages: faster time to market, proven solution, vendor handles maintenance and updates, often cheaper in short term. Buy disadvantages: vendor lock-in, limited customization, recurring licensing costs, dependency on vendor's roadmap and reliability. Decision framework: build core differentiators, buy commodity features. Example: Stripe for payments (buy) but your own recommendation engine (build) if recommendations are your product's core value.",
+        "explanation": "This is a foundational PM question that tests practical judgment. The best answers go beyond listing pros and cons to providing a clear decision framework. The 'core vs. commodity' heuristic is the most widely used and most effective approach.",
+        "tags": [
+            "build-vs-buy",
+            "tradeoffs",
+            "decision-making",
+            "strategy"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Building is always better because you maintain full control",
+                "Buying is always better because it saves time and money",
+                "Build core differentiators and buy commodity features, considering control, cost, time, and vendor risk",
+                "The decision should be based entirely on which option is cheaper"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "tech-004",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "Explain the concept of technical debt to a non-technical stakeholder.",
+        "answer": "Analogy: technical debt is like credit card debt for your codebase. When the team takes shortcuts to ship faster (using the 'credit card'), they save time now but accumulate 'debt' that must be repaid later through refactoring. Like financial debt, a small amount is strategic (shipping an MVP quickly). But too much debt slows everything down: every new feature takes longer because the team has to work around the shortcuts. Signs of high tech debt: releases take longer, bugs increase, onboarding new developers is slow, 'simple' changes take weeks. The solution is not to stop all feature work, but to allocate a consistent percentage (typically 15-20%) of engineering capacity to paying down debt.",
+        "explanation": "Explaining technical concepts to non-technical stakeholders is a core PM skill. The credit card analogy works because it connects to a concept everyone understands: borrowing against the future. The best answers include practical implications (what it means for the roadmap) and a proposed solution (allocate capacity).",
+        "tags": [
+            "technical-debt",
+            "communication",
+            "stakeholders",
+            "engineering"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Tell stakeholders not to worry about it since it is an engineering problem",
+                "Use the credit card debt analogy: shortcuts save time now but accumulate costs. Propose allocating 15-20% of capacity to debt reduction.",
+                "Show them the codebase and explain each area that needs refactoring",
+                "Say technical debt means the code is poorly written and needs to be rewritten from scratch"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-005",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "How would you design a notification system that can handle 100 million users?",
+        "answer": "Architecture: (1) Event-driven: use a message queue (Kafka/SQS) to decouple event producers from notification delivery. (2) Preference service: stores per-user notification settings, channel preferences (push, email, SMS, in-app), quiet hours. (3) Router: reads the event, checks user preferences, routes to the appropriate channel handler. (4) Channel handlers: push (APNs/FCM), email (SES/SendGrid), SMS (Twilio), in-app (WebSocket or polling). (5) Rate limiting: per-user throttle to prevent notification fatigue, global throttle to protect downstream services. (6) Key challenges: delivery guarantees (at-least-once with deduplication), ordering (notifications should arrive in a sensible order), scale (100M users means batch processing and horizontal scaling). (7) Monitoring: delivery success rate, latency p50/p99, unsubscribe rate.",
+        "explanation": "System design questions for PMs are less about implementation details and more about understanding the architecture well enough to make product decisions. You should know that message queues enable scale, that preference management is complex, and that delivery guarantees have tradeoffs.",
+        "tags": [
+            "system-design",
+            "notifications",
+            "scale",
+            "architecture"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Send push notifications directly from the application server to each user",
+                "Use event-driven architecture with message queues, preference service, channel routing, and per-user rate limiting",
+                "Batch all notifications and send them once per hour to reduce system load",
+                "Use a single third-party service like Firebase to handle all notifications"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-006",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "What is the difference between a relational database and a NoSQL database? When would you use each?",
+        "answer": "Relational (SQL): data in tables with rows and columns, strict schema, supports complex queries and joins, ACID transactions. Best for: structured data with clear relationships (user accounts, financial transactions, inventory). Examples: PostgreSQL, MySQL. NoSQL: flexible schema, various data models (document, key-value, column, graph). Best for: unstructured or semi-structured data, high write throughput, horizontal scaling. Examples: MongoDB (documents), Redis (key-value), Cassandra (columns), Neo4j (graph). Decision: if your data has clear relationships and you need consistency, use SQL. If your data shape varies, you need extreme scale, or you prioritize availability over consistency, use NoSQL. Many products use both: SQL for core data, NoSQL for caching, session storage, or analytics.",
+        "explanation": "PMs do not need to write SQL, but they need to understand data tradeoffs to make good product decisions. The most common mistake is choosing NoSQL because it sounds modern. Most products start with a relational database and add NoSQL for specific use cases.",
+        "tags": [
+            "databases",
+            "sql",
+            "nosql",
+            "architecture"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Always use NoSQL because it is faster and more modern",
+                "Always use SQL because it is more reliable",
+                "Use SQL for structured data with relationships and consistency needs; NoSQL for flexible schemas, high scale, and availability",
+                "The choice depends entirely on which database the engineering team knows best"
+            ],
+            "correctIndex": 2
+        }
+    },
+    {
+        "id": "tech-007",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "How would you explain microservices vs. monolith architecture to a business stakeholder?",
+        "answer": "Monolith: one big application where everything lives together. Like a single restaurant where the kitchen, seating, bar, and takeout are all in one building. Easy to start, simple to deploy, but as it grows, changes in one area can break another, and scaling requires scaling everything. Microservices: the application split into independent services, each handling one function. Like a food court where each stall operates independently. Each can be updated, scaled, and deployed on its own. Better for large teams and high-scale systems. The tradeoff: microservices add operational complexity (networking, service discovery, distributed debugging). For a PM: monolith is usually right for startups and small teams. Microservices make sense when the team is large enough that monolith is slowing down deployments and feature work.",
+        "explanation": "Architecture decisions directly impact product velocity. PMs need to understand why 'our deploys are slow' might mean the monolith needs to be broken up, and why 'debugging is hard' might mean microservices were adopted too early. The restaurant analogy makes this accessible to business stakeholders.",
+        "tags": [
+            "microservices",
+            "monolith",
+            "architecture",
+            "communication"
+        ]
+    },
+    {
+        "id": "tech-008",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "What are the key considerations when designing a system for global users across different regions?",
+        "answer": "Key considerations: (1) Latency: use CDN and edge servers (Cloudflare, AWS CloudFront) to serve content from nearby locations. (2) Data residency: GDPR (EU), PIPL (China), LGPD (Brazil) require data to be stored in specific regions. This affects database architecture. (3) Localization: not just translation, but date formats, number formats, currency, reading direction (RTL for Arabic/Hebrew), cultural norms in UX. (4) Availability: multi-region deployment with failover. If US-East goes down, can traffic be rerouted? (5) Consistency: with data across regions, you face the CAP theorem. Decide: strong consistency (slower, all regions see same data) vs. eventual consistency (faster, temporary differences). (6) Payment: different regions have different preferred payment methods (UPI in India, Alipay in China, iDEAL in Netherlands).",
+        "explanation": "Global system design tests your ability to think about infrastructure from a product perspective. The strongest answers connect technical decisions (data residency, consistency models) to product impact (user trust, compliance, experience). This is increasingly relevant as products launch globally from day one.",
+        "tags": [
+            "global",
+            "infrastructure",
+            "localization",
+            "compliance"
+        ]
+    },
+    {
+        "id": "tech-009",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "What metrics would you track for a search feature? How would you know if search is working well?",
+        "answer": "Core metrics: (1) Search usage: what percentage of users search? How many searches per session? (2) Click-through rate: percentage of searches that lead to clicking a result. Low CTR suggests poor relevance. (3) Zero-result rate: percentage of searches returning no results. High rate means missing content or poor query understanding. (4) Time to first click: how quickly users find what they need. (5) Search refinement rate: how often users modify their query. High rate suggests the first result set was not useful. (6) Post-search success: after clicking a result, did the user accomplish their goal? (purchase, read article, engage with content). (7) Search exit rate: users who search and then leave. The ultimate failure metric. Healthy search: high CTR, low zero-result rate, low refinement rate, high post-search success.",
+        "explanation": "Search is one of the most metric-rich features in any product. The best answers cover the full funnel from search initiation through post-search behavior. Knowing which metrics indicate which problems (low CTR = relevance issue, high zero-result = content gap) shows diagnostic thinking.",
+        "tags": [
+            "search",
+            "metrics",
+            "analytics",
+            "product-health"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Track only the number of searches per day as the primary metric",
+                "Monitor the full funnel: usage rate, CTR, zero-result rate, refinement rate, time to click, and post-search success",
+                "Use user satisfaction surveys after each search",
+                "Compare your search results to Google's results for the same queries"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-010",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "What is an MVP? How do you decide what to include and what to cut?",
+        "answer": "MVP (Minimum Viable Product): the smallest version of a product that delivers enough value to early users and generates enough learning to inform the next iteration. What to include: (1) Core value proposition: the one thing that solves the primary user problem. (2) Minimum usable quality: it must work reliably for the core use case (buggy MVPs do not generate useful feedback). (3) Feedback mechanism: a way to learn from users (analytics, feedback form, direct contact). What to cut: (1) Nice-to-have features: anything not required for the core value loop. (2) Scale optimizations: premature scaling is waste. (3) Edge cases: handle the happy path well before handling every edge case. (4) Polish: functional beats beautiful for an MVP. Decision framework: if removing a feature would make the core value proposition impossible to validate, it stays. Everything else goes.",
+        "explanation": "MVP is one of the most misunderstood concepts in product management. 'Minimum' does not mean low quality; it means focused scope. The best MVPs are high quality for a narrow use case. The worst MVPs are low quality across a broad scope. Interviewers want to hear how you make cut decisions, not just the definition.",
+        "tags": [
+            "mvp",
+            "scope",
+            "prioritization",
+            "lean"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Include every feature the team can build in the timeline",
+                "Build only the core value proposition with minimum usable quality, cut everything not needed to validate the hypothesis",
+                "Build a prototype with no real functionality to test the idea",
+                "Launch with full features but lower quality to get to market faster"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-011",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "You are the PM for a B2C product with an advertisement-based monetization model. One day, there are no ads served and the revenues plummet to zero. What would be your strategy to deal with this crisis?",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "technical",
+            "ads"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-012",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "There is a 15% drop in the open rate of the Instagram App. You are the PM. Tell us what could have happened.",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "technical",
+            "instagram",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-013",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "If you were a PM at Google News, what metrics would you track?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "metrics"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-014",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "You are the PM of LinkedIn's job recommendation algorithm. How would you measure its success?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical",
+            "linkedin"
+        ]
+    },
+    {
+        "id": "tech-015",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "You notice that Facebook's DAU/MAU ratio has decreased. What would you do?",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "technical",
+            "faang"
+        ]
+    },
+    {
+        "id": "tech-016",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "What metrics would you track for a ride-sharing product?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-017",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "If you were PM for Google Assistant, what metrics would you track?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "google",
+            "metrics"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-018",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "How would you measure user satisfaction for a product?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-019",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "How would you set up an A/B test for a new feature on Instagram?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "meta",
+            "technical",
+            "instagram",
+            "faang"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-020",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "How would you improve the Netflix recommendation algorithm?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "top",
+            "common",
+            "technical",
+            "faang-style"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-021",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "What would you do if your product's NPS dropped significantly?",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "technical"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-022",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "How would you improve the Capital One mobile banking app?",
+        "answer": "Treat this as a system-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "technical",
+            "capital-one"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-023",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "How would you measure the success of TikTok's recommendation algorithm?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical",
+            "tiktok"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-024",
+        "category": "technical",
+        "difficulty": "beginner",
+        "question": "How would you improve Twitter's content moderation?",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "technical",
+            "twitter"
+        ]
+    },
+    {
+        "id": "tech-025",
+        "category": "technical",
+        "difficulty": "intermediate",
+        "question": "What metrics would you track for Shopify's merchant success?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical",
+            "shopify"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-026",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "You are PM at Airbnb. How would you improve trust and safety?",
+        "answer": "Treat this as a diagnostic problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "marketplace",
+            "technical",
+            "trust-safety",
+            "airbnb"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    },
+    {
+        "id": "tech-027",
+        "category": "technical",
+        "difficulty": "advanced",
+        "question": "How would you measure the success of a new LinkedIn content feed algorithm?",
+        "answer": "Treat this as a measurement-design problem. First, define the metric or system boundary so the team is solving the same issue. Then decompose by funnel stage, platform, geography, and release cohort to prioritize hypotheses. Validate top hypotheses using logs, segment cuts, and targeted experiments before committing broad fixes. End with one primary KPI, two guardrails, owners by function, and expected timing for the first reliable readout.",
+        "explanation": "Interviewers are testing technical reasoning and cross-functional execution discipline. Weak answers jump to fixes without narrowing root causes. Strong answers are hypothesis-driven, measurable, and explicit about uncertainty and next validation steps.",
+        "tags": [
+            "pm-interview",
+            "metrics",
+            "technical",
+            "linkedin"
+        ],
+        "multipleChoice": {
+            "options": [
+                "Start implementation immediately and investigate later",
+                "Decompose hypotheses, validate with data, and use primary plus guardrail metrics",
+                "Assume a single root cause based on intuition",
+                "Rely only on anecdotal stakeholder feedback"
+            ],
+            "correctIndex": 1
+        }
+    }
+]
